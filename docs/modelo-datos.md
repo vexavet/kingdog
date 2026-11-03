@@ -7,7 +7,7 @@ erDiagram
 	clinicas ||--o{ perfiles : tiene
 	clinicas ||--o{ clientes : tiene
 	clinicas ||--o{ mascotas : tiene
-	clinicas ||--o{ mascotas : posee
+	clientes ||--o{ mascotas : posee
 
 	clinicas {
 		uuid id PK
