@@ -60,13 +60,22 @@
   --vx-card-bg:rgba(255,255,255,0.92);
   --vx-bg-image:url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1920&q=80');
 }
-*{box-sizing:border-box}
+html{max-width:100%;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:rgba(100,116,139,.35) transparent}
+*{box-sizing:border-box;scrollbar-width:thin;scrollbar-color:rgba(100,116,139,.35) transparent}
+*::-webkit-scrollbar{width:6px;height:6px}
+*::-webkit-scrollbar-track{background:transparent}
+*::-webkit-scrollbar-thumb{background:rgba(100,116,139,.32);border-radius:999px}
+*::-webkit-scrollbar-thumb:hover{background:rgba(100,116,139,.58)}
+.sidebar *{scrollbar-color:rgba(148,163,184,.28) transparent}
+.sidebar *::-webkit-scrollbar-thumb{background:rgba(148,163,184,.25)}
+.sidebar *::-webkit-scrollbar-thumb:hover{background:rgba(148,163,184,.48)}
+
 [hidden]{display:none!important}
-body{margin:0;background:var(--saas-bg);color:var(--saas-ink);font:400 15px/1.5 Figtree,system-ui,sans-serif;min-height:100vh}
+body{margin:0;background:var(--saas-bg);color:var(--saas-ink);font:400 15px/1.5 Figtree,system-ui,sans-serif;min-height:100vh;max-width:100%;overflow-x:hidden}
 body.saas-mode{background:var(--saas-bg);color:var(--saas-ink)}
 h1,h2,h3,h4{font-family:"Bricolage Grotesque",Figtree,sans-serif;margin:0;letter-spacing:-.015em}
 
-/* ================= PORTADA DE BIENVENIDA Y LOGIN (INDEX 2) ================= */
+/* ================= PORTADA DE BIENVENIDA Y LOGIN ================= */
 body.login-mode{
   font-family:'Inter',Figtree,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   min-height:100vh;
@@ -79,7 +88,7 @@ body.login-mode{
   background-position:center;
   position:relative;
   overflow-x:hidden;
-  padding:1.5rem;
+  padding:1rem;
 }
 
 .vx-backdrop-blur{
@@ -121,7 +130,7 @@ body.vx-login-open .vx-welcome-card{
 }
 
 .vx-welcome-content{
-  padding:2.35rem 2.25rem 1.85rem;
+  padding:1.75rem 2rem 1.45rem;
   display:flex;
   flex-direction:column;
   justify-content:space-between;
@@ -129,15 +138,15 @@ body.vx-login-open .vx-welcome-card{
 
 .vx-brand-header{
   text-align:center;
-  margin-bottom:1.45rem;
+  margin-bottom:1.1rem;
 }
 
 .vx-brand-badge{
-  width:52px;
-  height:52px;
-  margin:0 auto 0.85rem;
+  width:48px;
+  height:48px;
+  margin:0 auto 0.65rem;
   background:linear-gradient(135deg,var(--vx-primary),var(--vx-accent));
-  border-radius:14px;
+  border-radius:13px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -157,15 +166,15 @@ body.vx-login-open .vx-welcome-card{
   display:inline-flex;
   align-items:center;
   gap:0.4rem;
-  font-size:0.73rem;
+  font-size:0.72rem;
   font-weight:600;
   letter-spacing:0.03em;
   text-transform:uppercase;
   color:var(--vx-primary);
   background:var(--vx-primary-soft);
-  padding:0.28rem 0.72rem;
+  padding:0.25rem 0.7rem;
   border-radius:999px;
-  margin-bottom:0.65rem;
+  margin-bottom:0.5rem;
 }
 
 .vx-status-dot{
@@ -178,16 +187,16 @@ body.vx-login-open .vx-welcome-card{
 
 .vx-welcome-title{
   font-family:'Inter',Figtree,sans-serif;
-  font-size:1.65rem;
+  font-size:1.55rem;
   font-weight:700;
   color:var(--vx-text-main);
   letter-spacing:-0.025em;
-  margin-bottom:0.45rem;
+  margin-bottom:0.35rem;
 }
 
 .vx-welcome-desc{
-  font-size:0.9rem;
-  line-height:1.52;
+  font-size:0.88rem;
+  line-height:1.48;
   color:var(--vx-text-muted);
   max-width:460px;
   margin:0 auto;
@@ -196,15 +205,15 @@ body.vx-login-open .vx-welcome-card{
 .vx-modules-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:0.7rem;
-  margin-bottom:1.55rem;
+  gap:0.65rem;
+  margin-bottom:1.15rem;
 }
 
 .vx-module-item{
   display:flex;
   align-items:flex-start;
-  gap:0.65rem;
-  padding:0.8rem;
+  gap:0.6rem;
+  padding:0.7rem 0.75rem;
   background:rgba(255,255,255,0.72);
   border:1px solid var(--vx-border);
   border-radius:13px;
@@ -218,9 +227,9 @@ body.vx-login-open .vx-welcome-card{
 
 .vx-module-icon{
   flex-shrink:0;
-  width:32px;
-  height:32px;
-  border-radius:9px;
+  width:30px;
+  height:30px;
+  border-radius:8px;
   background:var(--vx-primary-soft);
   color:var(--vx-primary);
   display:flex;
@@ -230,15 +239,15 @@ body.vx-login-open .vx-welcome-card{
 
 .vx-module-info h3{
   font-family:'Inter',Figtree,sans-serif;
-  font-size:0.83rem;
+  font-size:0.82rem;
   font-weight:600;
   color:var(--vx-text-main);
-  margin:0 0 0.15rem;
+  margin:0 0 0.12rem;
 }
 
 .vx-module-info p{
-  font-size:0.74rem;
-  line-height:1.38;
+  font-size:0.73rem;
+  line-height:1.35;
   color:var(--vx-text-muted);
   margin:0;
 }
@@ -252,9 +261,9 @@ body.vx-login-open .vx-welcome-card{
   background-color:var(--vx-primary);
   color:#ffffff;
   font-family:'Inter',Figtree,sans-serif;
-  font-size:0.95rem;
+  font-size:0.93rem;
   font-weight:600;
-  padding:0.88rem 1.5rem;
+  padding:0.82rem 1.4rem;
   border:none;
   border-radius:12px;
   cursor:pointer;
@@ -287,15 +296,15 @@ body.vx-login-open .vx-welcome-card{
 }
 
 .vx-card-footer{
-  margin-top:1.35rem;
-  padding-top:1rem;
+  margin-top:1rem;
+  padding-top:0.85rem;
   border-top:1px solid var(--vx-border);
   display:flex;
   align-items:center;
   justify-content:space-between;
   flex-wrap:wrap;
   gap:0.5rem;
-  font-size:0.76rem;
+  font-size:0.75rem;
   color:#64748b;
 }
 
@@ -333,14 +342,14 @@ body.vx-login-open .vx-welcome-card{
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
-  padding:1.65rem;
+  padding:1.5rem;
   color:#ffffff;
 }
 
 .vx-media-tag{
   display:inline-block;
   width:fit-content;
-  font-size:0.7rem;
+  font-size:0.68rem;
   font-weight:600;
   letter-spacing:0.04em;
   text-transform:uppercase;
@@ -348,15 +357,15 @@ body.vx-login-open .vx-welcome-card{
   backdrop-filter:blur(8px);
   -webkit-backdrop-filter:blur(8px);
   border:1px solid rgba(255,255,255,0.28);
-  padding:0.28rem 0.65rem;
+  padding:0.26rem 0.62rem;
   border-radius:8px;
-  margin-bottom:0.55rem;
+  margin-bottom:0.5rem;
 }
 
 .vx-media-caption{
-  font-size:0.88rem;
+  font-size:0.86rem;
   font-weight:500;
-  line-height:1.45;
+  line-height:1.42;
   color:rgba(255,255,255,0.94);
   margin:0;
 }
@@ -370,7 +379,8 @@ body.vx-login-open .vx-welcome-card{
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:1.5rem;
+  padding:1.25rem;
+  overflow-y:auto;
   opacity:0;
   visibility:hidden;
   transition:opacity 0.14s ease-out,visibility 0.14s ease-out;
@@ -389,7 +399,7 @@ body.vx-login-open .vx-welcome-card{
   background:#ffffff;
   border:1px solid rgba(255,255,255,0.9);
   border-radius:20px;
-  padding:2.15rem 2rem;
+  padding:2rem 1.85rem;
   box-shadow:
     0 25px 50px -12px rgba(0,0,0,0.55),
     0 0 0 1px rgba(15,23,42,0.08);
@@ -426,27 +436,27 @@ body.vx-login-open .vx-welcome-card{
 
 .vx-login-header{
   text-align:center;
-  margin-bottom:1.5rem;
+  margin-bottom:1.35rem;
 }
 
 .vx-login-header .vx-brand-badge{
   width:46px;
   height:46px;
-  margin:0 auto 0.8rem;
+  margin:0 auto 0.75rem;
   border-radius:12px;
 }
 
 .vx-login-title{
   font-family:'Inter',Figtree,sans-serif;
-  font-size:1.38rem;
+  font-size:1.35rem;
   font-weight:700;
   color:var(--vx-text-main);
   letter-spacing:-0.025em;
-  margin-bottom:0.25rem;
+  margin-bottom:0.2rem;
 }
 
 .vx-login-subtitle{
-  font-size:0.86rem;
+  font-size:0.85rem;
   color:var(--vx-text-muted);
   margin:0;
 }
@@ -454,7 +464,7 @@ body.vx-login-open .vx-welcome-card{
 .vx-login-form{
   display:flex;
   flex-direction:column;
-  gap:1rem;
+  gap:0.95rem;
 }
 
 .vx-form-group{
@@ -573,22 +583,22 @@ body.vx-login-open .vx-welcome-card{
   }
   .vx-welcome-media{
     order:-1;
-    height:190px;
+    height:180px;
   }
 }
 
 @media (max-width:540px){
   body.login-mode{
-    padding:1rem;
+    padding:0.85rem;
   }
   .vx-welcome-content{
-    padding:1.75rem 1.35rem 1.5rem;
+    padding:1.5rem 1.25rem 1.35rem;
   }
   .vx-modules-grid{
     grid-template-columns:1fr;
   }
   .vx-welcome-title{
-    font-size:1.45rem;
+    font-size:1.4rem;
   }
   .vx-card-footer{
     justify-content:center;
@@ -629,10 +639,10 @@ input:disabled,select:disabled,textarea:disabled{background:#f1f5f9;color:#64748
 .btn[disabled]{opacity:.5;cursor:not-allowed}
 
 /* NFC Indicator Pill */
-.nfc-pill{display:inline-flex;align-items:center;gap:6px;padding:0 10px;height:32px;border-radius:99px;border:1px solid var(--saas-border);background:#f8fafc;color:var(--saas-muted);font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s}
+.nfc-pill{display:inline-flex;align-items:center;gap:6px;padding:0 10px;height:32px;border-radius:99px;border:1px solid var(--saas-border);background:#f8fafc;color:var(--saas-muted);font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;white-space:nowrap}
 .nfc-pill:hover{border-color:#94a3b8}
 .nfc-pill.on{background:#dcfce7;border-color:#86efac;color:#15803d}
-.nfc-dot{width:8px;height:8px;border-radius:50%;background:#94a3b8}
+.nfc-dot{width:8px;height:8px;border-radius:50%;background:#94a3b8;flex-shrink:0}
 .nfc-pill.on .nfc-dot{background:#16a34a;box-shadow:0 0 0 3px rgba(22,163,74,.25)}
 
 .clave{position:relative}.clave input{padding-right:44px}
@@ -641,20 +651,21 @@ input:disabled,select:disabled,textarea:disabled{background:#f1f5f9;color:#64748
 @font-face{font-family:Patitas;src:url(data:font/woff;base64,d09GRk9UVE8AAAL0AAkAAAAAAxgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAACEAAAANkAAADZXGRmUU9TLzIAAAFAAAAAMwAAAGDFgetTY21hcAAAAcQAAABAAAAAVEnhbRZoZWFkAAAA4AAAADYAAAA2L/luQmhoZWEAAAEYAAAAHgAAACQGQAJ4aG10eAAAAuwAAAAGAAAABgNQAABtYXhwAAABOAAAAAYAAAAGAAJQAG5hbWUAAAF0AAAATwAAAGBgfZalcG9zdAAAAgQAAAAMAAAAIAADAAAAAQAAAAEAANszsw5fDzz1AAMD6AAAAADm65UmAAAAAObrlSYAOwBpAtECrQAAAAMAAgAAAAAAAHicY2BkYGBW+G8BJHkYXBiMmG4xAEVQACMARNkCvwAAAABQAAACAAB4nGNgZuZhnMDAysDCQAA0gMmEBhjfHggYGBSU1FYzK/y3YGBgVmA4gaZFgYEBAPsjBoEAeJwliEEKwCAQA0crSC99Qd/Rd4g/2IOI4EnX/3dtExImAQIPji1H/HrLG0cOXDjtucw/e6M7iTaVmUtdXQYJQWkWYZIpVBbd1ngBR7QMEAB4nGNgYGBiYGBgBmIRIMkIplkYHIA0DwMHUI5FQUn5l+pp1fNqq///Z2BA5t2/f4f9ltkto5thYH1wAABPdhKheJxjYGbACwAAfQAEAQAEAQABAQEIUGF0aXRhcwABAQET+BwCxvT5ZflBBcQPi/dtEscRAAIBAQQLcGF3UGF0aXRhcwAAAAGHAAIBAQSY+aAO+aD48feiFeYr1fsL+wsrQTAw60H3C/cL69XmHvwl9xwVpr6ExGieaJ1ZcW9YcFiSUq54rnm9pae+CPci9zIVlcdywGSSZJFjX4JPgU+kVrKEsoWzt5THCPd6oRWCx2O3ZIVkhHJWlU+UT7NfspGykqTAgccI9xT7BBVvvlmlaHloeIRSplinWL1xrp2unpLEcL4IDgAAAAMMAAAARAAA) format("woff");unicode-range:U+2022,U+25CF,U+25CB,U+26AB,U+23FA;font-display:swap}
 input[type=password]:not(.vx-form-input){font-family:Patitas,Figtree,system-ui,sans-serif;font-size:1.1rem;color:var(--saas-pri)}
 
-dialog{border:1px solid var(--saas-border);border-radius:14px;background:#fff;color:var(--saas-ink);padding:0;width:min(440px,94vw);box-shadow:0 20px 45px rgba(15,23,42,.22)}
+dialog{border:1px solid var(--saas-border);border-radius:14px;background:#fff;color:var(--saas-ink);padding:0;width:min(440px,94vw);max-height:90vh;overflow:hidden;box-shadow:0 20px 45px rgba(15,23,42,.22)}
+dialog[open]{display:flex;flex-direction:column}
 dialog.wide{width:min(760px,95vw)}
 dialog.xl{width:min(980px,96vw)}
 dialog::backdrop{background:rgba(15,23,42,.5);backdrop-filter:blur(2px)}
-.dlg-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--saas-border);background:#f8fafc;border-radius:14px 14px 0 0}
-.dlg-body{padding:20px;max-height:78vh;overflow-y:auto}
-.dlg-foot{display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:14px 20px;border-top:1px solid var(--saas-border);background:#f8fafc;border-radius:0 0 14px 14px}
-dialog form.simple-dlg{padding:24px;display:grid;gap:12px}
+.dlg-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--saas-border);background:#f8fafc;border-radius:14px 14px 0 0;flex-shrink:0}
+.dlg-body{padding:20px;overflow-y:auto;flex:1;min-height:0}
+.dlg-foot{display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:14px 20px;border-top:1px solid var(--saas-border);background:#f8fafc;border-radius:0 0 14px 14px;flex-shrink:0}
+dialog form.simple-dlg{padding:24px;display:grid;gap:12px;overflow-y:auto;max-height:90vh}
 .err{color:var(--err);font-size:.85rem;min-height:1.1em;text-align:left}
 #toast{position:fixed;right:20px;bottom:20px;background:#0f172a;color:#fff;padding:12px 18px;border-radius:10px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;transform:translateY(8px);max-width:90vw;z-index:9999;font-weight:500;box-shadow:0 10px 25px rgba(0,0,0,.2)}
 #toast.ver{opacity:1;transform:translateY(0)}#toast.error{background:var(--err)}
 
 /* ================= SAAS WORKSPACE & MENÚ HAMBURGUESA ================= */
-.saas-shell{display:flex;min-height:100vh}
+.saas-shell{display:flex;min-height:100vh;width:100%;max-width:100%;overflow-x:hidden}
 .sidebar{width:268px;background:var(--saas-sidebar);color:#cbd5e1;display:flex;flex-direction:column;position:fixed;left:0;top:0;bottom:0;z-index:50;transform:translateX(-100%);transition:transform .25s cubic-bezier(.4,0,.2,1);box-shadow:none}
 .sidebar.open{transform:translateX(0);box-shadow:0 20px 50px rgba(15,23,42,.38)}
 .sb-backdrop{display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);backdrop-filter:blur(1px);z-index:45}
@@ -675,41 +686,41 @@ dialog form.simple-dlg{padding:24px;display:grid;gap:12px}
 .sb-badge{margin-left:auto;background:#ef4444;color:#fff;font-size:.7rem;font-weight:700;padding:1px 6px;border-radius:99px}
 .sb-footer{padding:12px 14px;border-top:1px solid rgba(255,255,255,.08);font-size:.8rem;color:#94a3b8;display:flex;align-items:center;gap:10px}
 
-.saas-main{flex:1;min-width:0;display:flex;flex-direction:column}
-.topbar{height:62px;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--saas-border);padding:0 22px;display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:25}
+.saas-main{flex:1;min-width:0;max-width:100%;display:flex;flex-direction:column}
+.topbar{height:62px;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--saas-border);padding:0 22px;display:flex;align-items:center;justify-content:space-between;gap:10px;position:sticky;top:0;z-index:25}
 .tb-left{display:flex;align-items:center;gap:12px;flex:1;min-width:0}
 .tb-burger{display:grid;place-items:center;background:#fff;border:1px solid var(--saas-border);border-radius:9px;width:38px;height:38px;cursor:pointer;color:var(--saas-ink);flex-shrink:0;transition:all .15s}
 .tb-burger:hover{background:#f1f5f9;border-color:#94a3b8}
 .tb-brand-mini{display:inline-flex;align-items:center;gap:8px;font:800 1.08rem "Bricolage Grotesque",sans-serif;color:var(--saas-ink);text-decoration:none;flex-shrink:0}
-.global-search{position:relative;max-width:340px;width:100%}
+.global-search{position:relative;max-width:320px;width:100%;min-width:120px}
 .global-search input{padding-left:34px;background:#f8fafc;border-color:#e2e8f0;min-height:36px;font-size:.86rem}
 .global-search .gs-ico{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#94a3b8;pointer-events:none;display:grid}
 .gs-results{position:absolute;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1px solid var(--saas-border);border-radius:10px;box-shadow:var(--shadow-md);max-height:320px;overflow-y:auto;z-index:50}
 .gs-item{padding:9px 12px;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;border-bottom:1px solid #f1f5f9;font-size:.85rem}
 .gs-item:hover{background:#f8fafc}
-.tb-right{display:flex;align-items:center;gap:8px}
-.icon-btn{position:relative;width:38px;height:38px;border-radius:8px;border:1px solid var(--saas-border);background:#fff;display:grid;place-items:center;cursor:pointer;color:var(--saas-ink)}
+.tb-right{display:flex;align-items:center;gap:7px;flex-shrink:0}
+.icon-btn{position:relative;width:38px;height:38px;border-radius:8px;border:1px solid var(--saas-border);background:#fff;display:grid;place-items:center;cursor:pointer;color:var(--saas-ink);flex-shrink:0}
 .icon-btn:hover{background:#f8fafc}
 .notif-dot{position:absolute;top:5px;right:5px;width:8px;height:8px;border-radius:50%;background:#ef4444}
 .notif-pop{position:absolute;top:54px;right:22px;width:min(360px,92vw);background:#fff;border:1px solid var(--saas-border);border-radius:12px;box-shadow:var(--shadow-md);z-index:50;overflow:hidden}
-.user-pill{display:flex;align-items:center;gap:8px;padding:4px 10px 4px 6px;border:1px solid var(--saas-border);border-radius:99px;background:#f8fafc;cursor:pointer;font-size:.83rem;font-weight:600}
+.user-pill{display:flex;align-items:center;gap:8px;padding:4px 10px 4px 6px;border:1px solid var(--saas-border);border-radius:99px;background:#f8fafc;cursor:pointer;font-size:.83rem;font-weight:600;flex-shrink:0}
 .user-ava{width:28px;height:28px;border-radius:50%;background:var(--saas-pri);color:#fff;display:grid;place-items:center;font-weight:700;font-size:.78rem;overflow:hidden;flex-shrink:0}
 .user-ava img{width:100%;height:100%;object-fit:cover}
 
 .sync-banner{background:#fef3c7;border-bottom:1px solid #fde68a;color:#92400e;padding:7px 22px;font-size:.82rem;display:flex;align-items:center;justify-content:space-between;gap:10px}
-.workspace{padding:22px;max-width:1440px;width:100%;margin:0 auto}
+.workspace{padding:22px;max-width:1440px;width:100%;margin:0 auto;min-width:0}
 .page-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:20px}
 .page-title{font-size:1.45rem;font-weight:700;color:var(--saas-ink)}
 .page-sub{font-size:.86rem;color:var(--saas-muted);margin-top:2px}
 
 .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-bottom:20px}
-.kpi-card{background:#fff;border:1px solid var(--saas-border);border-radius:12px;padding:16px;box-shadow:var(--shadow-sm);display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.kpi-card{background:#fff;border:1px solid var(--saas-border);border-radius:12px;padding:16px;box-shadow:var(--shadow-sm);display:flex;align-items:flex-start;justify-content:space-between;gap:12px;min-width:0}
 .kpi-label{font-size:.8rem;font-weight:600;color:var(--saas-muted)}
 .kpi-val{font:700 1.6rem "Bricolage Grotesque",sans-serif;color:var(--saas-ink);margin-top:4px}
 .kpi-foot{font-size:.75rem;color:var(--saas-muted);margin-top:4px}
 .kpi-ico{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;flex-shrink:0}
 
-.card{background:#fff;border:1px solid var(--saas-border);border-radius:12px;box-shadow:var(--shadow-sm);overflow:hidden}
+.card{background:#fff;border:1px solid var(--saas-border);border-radius:12px;box-shadow:var(--shadow-sm);overflow:hidden;min-width:0}
 .card-head{padding:14px 18px;border-bottom:1px solid var(--saas-border);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .card-title{font-size:1rem;font-weight:700}
 .card-body{padding:18px}
@@ -729,7 +740,7 @@ dialog form.simple-dlg{padding:24px;display:grid;gap:12px}
 .b-teal{background:var(--saas-pri-soft);color:var(--saas-pri-dark)}
 .b-gray{background:#f1f5f9;color:#475569}
 
-.tbl-wrap{overflow-x:auto}
+.tbl-wrap{overflow-x:auto;max-width:100%}
 table.saas-tbl{width:100%;border-collapse:collapse;font-size:.87rem}
 table.saas-tbl th{background:#f8fafc;color:var(--saas-muted);font-weight:600;text-align:left;padding:10px 14px;border-bottom:1px solid var(--saas-border);white-space:nowrap;font-size:.78rem;text-transform:uppercase;letter-spacing:.03em}
 table.saas-tbl td{padding:11px 14px;border-bottom:1px solid #f1f5f9;vertical-align:middle}
@@ -742,7 +753,7 @@ table.saas-tbl tr:hover td{background:#f8fafc}
 .tab-btn.active{color:var(--saas-pri);border-bottom-color:var(--saas-pri)}
 
 .pet-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:14px}
-.pet-card{background:#fff;border:1px solid var(--saas-border);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px;transition:transform .15s,box-shadow .15s}
+.pet-card{background:#fff;border:1px solid var(--saas-border);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px;transition:transform .15s,box-shadow .15s;min-width:0}
 .pet-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
 .pet-ava{width:54px;height:54px;border-radius:50%;background:var(--saas-pri-soft);color:var(--saas-pri-dark);display:grid;place-items:center;font:700 1.25rem "Bricolage Grotesque",sans-serif;overflow:hidden;flex-shrink:0}
 .pet-ava img{width:100%;height:100%;object-fit:cover}
@@ -757,6 +768,10 @@ table.saas-tbl tr:hover td{background:#f8fafc}
 .prod-tile{border:1px solid var(--saas-border);border-radius:10px;padding:12px;background:#fff;cursor:pointer;text-align:left;transition:all .15s;display:flex;flex-direction:column;justify-content:space-between;gap:6px}
 .prod-tile:hover{border-color:var(--saas-pri);box-shadow:var(--shadow-sm)}
 
+@media (max-width:1120px){
+  .topbar{padding:0 14px}
+  .tb-right .btn-lbl{display:none}
+}
 @media (max-width:960px){
   .pos-layout,.grid-2,.grid-3{grid-template-columns:1fr}
   .hide-sm{display:none}
@@ -775,7 +790,7 @@ table.saas-tbl tr:hover td{background:#f8fafc}
 <body>
 <div id="root"></div>
 
-<!-- VENTANA DE LOGIN (Modal rápido superpuesto de index2) -->
+<!-- VENTANA DE LOGIN (Modal rápido superpuesto) -->
 <div class="vx-login-overlay" id="vxLoginOverlay" role="dialog" aria-modal="true" aria-labelledby="vxLoginTitle">
   <div class="vx-login-modal">
     <button type="button" class="vx-btn-close" id="l-x" aria-label="Cerrar ventana de acceso">
@@ -1731,7 +1746,7 @@ function ojos(root = document){
 }
 ojos();
 
-/* ============ SESIÓN Y CUENTA (LOGIN MODAL INDEX 2) ============ */
+/* ============ SESIÓN Y CUENTA (LOGIN MODAL) ============ */
 async function cargarPerfil(u){
   const { data } = await sb.from("perfiles").select("*").eq("id", u.id).maybeSingle();
   if (!data || !data.activo){ await sb.auth.signOut(); perfil = null; return data ? "bloqueado" : "sinperfil"; }
@@ -1938,7 +1953,7 @@ async function cerrarSesion(){
   perfil = null; render();
 }
 
-/* ============ PORTADA DE BIENVENIDA (INDEX 2) & PERFIL PÚBLICO ============ */
+/* ============ PORTADA DE BIENVENIDA & PERFIL PÚBLICO ============ */
 function nfcPillHTML(){
   return `<button type="button" class="nfc-pill ${nfcState.connected?"on":""}" data-nfc-status onclick="openNfcSetupModal()" title="Estado del lector NFC ACR122U-A9">
     <span class="nfc-dot"></span>
@@ -1958,7 +1973,7 @@ function pintarPortada(){
       <div>
         <div class="vx-brand-header">
           <div class="vx-brand-badge">
-            ${welcomeLogoInnerHTML(34)}
+            ${welcomeLogoInnerHTML(32)}
           </div>
 
           <span class="vx-system-pill">
@@ -2036,7 +2051,7 @@ function pintarPortada(){
 
       <div>
         <button type="button" class="vx-btn-primary" id="vxOpenLoginBtn">
-          <span>Iniciar sesión</span>
+          <span>Iniciar sesión en Vexavet</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
@@ -2335,9 +2350,9 @@ function renderSaas(){
         </div>
         <div class="tb-right">
           ${nfcPillHTML()}
-          <button type="button" class="btn sm pri" onclick="openConsultaModal()"><i data-lucide="plus"></i> Consulta</button>
-          <button type="button" class="btn sm" onclick="openCitaModal()"><i data-lucide="calendar-plus"></i> Cita</button>
-          <button type="button" class="btn sm" onclick="openMascotaModal()"><i data-lucide="paw-print"></i> Paciente</button>
+          <button type="button" class="btn sm pri" title="Nueva Consulta" onclick="openConsultaModal()"><i data-lucide="plus"></i><span class="btn-lbl">Consulta</span></button>
+          <button type="button" class="btn sm" title="Nueva Cita" onclick="openCitaModal()"><i data-lucide="calendar-plus"></i><span class="btn-lbl">Cita</span></button>
+          <button type="button" class="btn sm" title="Nuevo Paciente" onclick="openMascotaModal()"><i data-lucide="paw-print"></i><span class="btn-lbl">Paciente</span></button>
           <button type="button" class="icon-btn" id="btn-notif" title="Alertas y Recordatorios">
             <i data-lucide="bell" style="width:18px;height:18px"></i>
             ${alerts.length ? `<span class="notif-dot"></span>` : ""}
@@ -3800,7 +3815,7 @@ function viewHospitalizacion(){
             <td>${esc(h.motivo)}</td>
             <td>${esc(h.diagnostico || "—")}</td>
             <td>${esc(h.medico_responsable || "—")}</td>
-          </tr>`).join("") || `<tr><td colspan="6">Sin egresos registrados.</td></tr>`}
+          </tr>`).join("") || `<tr><td colspan="6">Sin altas registradas.</td></tr>`}
         </tbody>
       </table></div>
     </div>
@@ -3809,37 +3824,38 @@ function viewHospitalizacion(){
 
 function openHospModal(){
   openModal({
-    title: "Ingresar Paciente a Hospitalización",
+    title: "Nuevo Ingreso Hospitalario / Ambulatorio",
+    size: "wide",
     bodyHTML: `
       <form id="f-hosp" class="form-grid">
-        <div><label>Paciente *</label><select name="mascota_id" required>${state.mascotas.map(m => `<option value="${m.id}">${esc(m.nombre)}</option>`).join("")}</select></div>
-        <div><label>Jaula / Box / Área *</label><input name="jaula" required placeholder="Ej. Jaula 03 - Felinos"></div>
-        <div class="full"><label>Motivo de Ingreso *</label><input name="motivo" required></div>
-        <div class="full"><label>Diagnóstico Presuntivo</label><input name="diagnostico"></div>
-        <div><label>Estado Clínico</label><select name="estado"><option>Hospitalizado</option><option>Observación</option><option>Crítico</option></select></div>
+        <div><label>Paciente *</label><select name="mascota_id" required>${state.mascotas.map(m => `<option value="${m.id}">${esc(m.nombre)} (${esc(m.duenio_nombre||"")})</option>`).join("")}</select></div>
+        <div><label>Jaula / Box / Área</label><input name="jaula" placeholder="Ej. UCI-01, Jaula 4, Felinos-2"></div>
+        <div><label>Estado Clínico</label><select name="estado"><option>Hospitalizado</option><option>Observación</option><option>Crítico</option><option>Estable</option></select></div>
         <div><label>Médico Responsable</label><input name="medico_responsable" value="${esc(perfil.nombre)}"></div>
-        <div class="full"><label>Indicaciones de Manejo y Evolución</label><textarea name="evolucion"></textarea></div>
+        <div class="full"><label>Motivo de Ingreso *</label><input name="motivo" required></div>
+        <div class="full"><label>Diagnóstico Inicial</label><input name="diagnostico"></div>
+        <div class="full"><label>Evolución y Plan Terapéutico</label><textarea name="evolucion"></textarea></div>
       </form>
     `,
-    footHTML: `<button type="button" class="btn" onclick="closeModal()">Cancelar</button><button type="submit" form="f-hosp" class="btn pri">Confirmar Ingreso</button>`
+    footHTML: `<button type="button" class="btn" onclick="closeModal()">Cancelar</button><button type="submit" form="f-hosp" class="btn pri">Registrar Ingreso</button>`
   });
   $("f-hosp").onsubmit = async e => {
     e.preventDefault();
     const fd = new FormData(e.target);
     const pet = state.mascotas.find(m => m.id === fd.get("mascota_id"));
     await db.insert("hospitalizaciones", {
-      mascota_id: pet.id,
-      mascota_nombre: pet.nombre,
-      jaula: fd.get("jaula").trim(),
-      fecha_ingreso: new Date().toISOString(),
-      motivo: fd.get("motivo").trim(),
-      diagnostico: fd.get("diagnostico").trim() || null,
+      mascota_id: pet?.id || null,
+      mascota_nombre: pet?.nombre || "Paciente",
+      jaula: fd.get("jaula").trim() || null,
       estado: fd.get("estado"),
       medico_responsable: fd.get("medico_responsable").trim(),
-      evolucion: fd.get("evolucion").trim() || null
+      motivo: fd.get("motivo").trim(),
+      diagnostico: fd.get("diagnostico").trim() || null,
+      evolucion: fd.get("evolucion").trim() || null,
+      fecha_ingreso: new Date().toISOString()
     });
-    log("Ingresó a hospitalización", "hospitalizaciones", pet.nombre);
-    closeModal(); await syncAllData(); renderSaas(); toast("Paciente ingresado a hospitalización.");
+    log("Ingresó paciente a hospitalización", "hospitalizaciones", pet?.nombre);
+    closeModal(); await syncAllData(); renderSaas(); toast("Paciente ingresado.");
   };
 }
 
@@ -3847,31 +3863,35 @@ function openKardexModal(hospId){
   const h = state.hospitalizaciones.find(x => x.id === hospId);
   const items = state.kardex.filter(k => k.hospitalizacion_id === hospId);
   openModal({
-    title: `Kardex Hospitalario · ${h.mascota_nombre} (${h.jaula || ""})`,
+    title: `Kardex Hospitalario · ${h?.mascota_nombre || ""}`,
     size: "wide",
     bodyHTML: `
       <form id="f-kardex" class="form-grid" style="background:#f8fafc;padding:12px;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:16px">
-        <div><label>Medicamento / Fluido *</label><input name="medicamento" required placeholder="Ej. Meloxicam 0.5%, Lactato Ringer"></div>
-        <div><label>Dosis *</label><input name="dosis" required placeholder="Ej. 0.4 ml / 20 ml/h"></div>
-        <div><label>Vía</label><input name="via" value="IV"></div>
-        <div><label>Horario Programado</label><input name="horario" placeholder="Ej. 08:00 - 20:00"></div>
-        <div class="full"><button class="btn pri sm">+ Agregar al Kardex</button></div>
+        <div><label>Medicamento / Fluido *</label><input name="medicamento" required placeholder="Ej. Meloxicam, Lactato Ringer…"></div>
+        <div><label>Dosis *</label><input name="dosis" required placeholder="Ej. 0.4 ml, 25 ml/h"></div>
+        <div><label>Vía</label><select name="via"><option>IV (Intravenosa)</option><option>SC (Subcutánea)</option><option>IM (Intramuscular)</option><option>Oral</option><option>Tópica</option></select></div>
+        <div><label>Hora Programada</label><input type="time" name="hora_programada" value="08:00"></div>
+        <div class="full" style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+          <input name="observaciones" placeholder="Observación de enfermería…">
+          <button class="btn pri sm">+ Agregar al Kardex</button>
+        </div>
       </form>
       <div class="tbl-wrap"><table class="saas-tbl">
-        <thead><tr><th>Horario</th><th>Medicamento</th><th>Dosis / Vía</th><th>Estado</th><th>Acción</th></tr></thead>
+        <thead><tr><th>Hora</th><th>Medicamento</th><th>Dosis / Vía</th><th>Observaciones</th><th>Estado</th></tr></thead>
         <tbody>
           ${items.map(k => `<tr>
-            <td><strong>${esc(k.horario || "—")}</strong></td>
+            <td><strong>${esc(k.hora_programada || "—")}</strong></td>
             <td>${esc(k.medicamento)}</td>
-            <td>${esc(k.dosis)} (${esc(k.via || "—")})</td>
-            <td>${k.administrado ? `<span class="badge b-ok">Administrado (${esc(k.administrado_por||"")})</span>` : `<span class="badge b-warn">Pendiente</span>`}</td>
-            <td>${!k.administrado ? `<button class="btn sm pri" onclick="checkKardex('${k.id}','${hospId}')">Marcar Aplicado</button>` : "✓"}</td>
-          </tr>`).join("") || `<tr><td colspan="5">Sin indicaciones en el Kardex aún.</td></tr>`}
+            <td>${esc(k.dosis)} · ${esc(k.via || "—")}</td>
+            <td>${esc(k.observaciones || "—")}</td>
+            <td>${k.administrado
+              ? `<span class="badge b-ok">Aplicado (${esc(k.administrado_por || "")})</span>`
+              : `<button class="btn sm pri" onclick="marcarKardex('${k.id}','${hospId}')">Marcar Aplicado</button>`}</td>
+          </tr>`).join("") || `<tr><td colspan="5">Sin tratamientos registrados en Kardex.</td></tr>`}
         </tbody>
       </table></div>
     `
   });
-
   $("f-kardex").onsubmit = async e => {
     e.preventDefault();
     const fd = new FormData(e.target);
@@ -3879,218 +3899,257 @@ function openKardexModal(hospId){
       hospitalizacion_id: hospId,
       medicamento: fd.get("medicamento").trim(),
       dosis: fd.get("dosis").trim(),
-      via: fd.get("via").trim(),
-      horario: fd.get("horario").trim(),
+      via: fd.get("via"),
+      hora_programada: fd.get("hora_programada"),
+      observaciones: fd.get("observaciones").trim() || null,
       administrado: false
     });
     await syncAllData(); openKardexModal(hospId); toast("Indicación agregada al Kardex.");
   };
 }
 
-async function checkKardex(kId, hospId){
-  await db.update("kardex_hospitalizacion", kId, {
+async function marcarKardex(id, hospId){
+  await db.update("kardex_hospitalizacion", id, {
     administrado: true,
-    hora_administracion: new Date().toISOString(),
-    administrado_por: perfil.nombre
+    administrado_por: perfil.nombre,
+    administrado_en: new Date().toISOString()
   });
-  await syncAllData(); openKardexModal(hospId); toast("Administración registrada.");
+  await syncAllData(); openKardexModal(hospId); toast("Dosis marcada como administrada.");
 }
 
-async function darAltaHosp(hospId){
+async function darAltaHosp(id){
   if (!confirm("¿Confirmar alta médica de este paciente?")) return;
-  await db.update("hospitalizaciones", hospId, { estado: "Alta médica", fecha_egreso: new Date().toISOString() });
-  log("Dio alta médica", "hospitalizaciones", hospId);
+  await db.update("hospitalizaciones", id, { estado: "Alta médica", fecha_egreso: new Date().toISOString() });
+  log("Dio de alta médica", "hospitalizaciones", id);
   await syncAllData(); renderSaas(); toast("Alta médica registrada.");
 }
 
 /* ============ 8. PUNTO DE VENTA (POS) ============ */
-let posSearch = "", posCatFilter = "";
+let posSearch = "", posCliente = "", posMascota = "", posMetodo = "Efectivo", posDescuento = 0;
 function viewPOS(){
-  const catalog = [
-    ...state.productos.map(p => ({ id: p.id, kind: "producto", name: p.nombre, cat: p.categoria || "Producto", price: Number(p.precio_venta || 0), stock: Number(p.existencias || 0) })),
-    ...state.procedimientos.map(s => ({ id: s.id, kind: "servicio", name: s.nombre, cat: s.categoria || "Servicio", price: Number(s.precio || 0), stock: null }))
-  ];
   const q = posSearch.trim().toLowerCase();
-  const filtered = catalog.filter(item =>
-    (!posCatFilter || item.cat === posCatFilter) &&
-    item.name.toLowerCase().includes(q)
-  );
-  const cats = Array.from(new Set(catalog.map(c => c.cat)));
+  const prods = state.productos.filter(p => p.activo !== false && (p.nombre + " " + (p.categoria||"") + " " + (p.codigo||"")).toLowerCase().includes(q));
+  const procs = state.procedimientos.filter(p => p.nombre.toLowerCase().includes(q));
 
-  const taxPct = Number(state.config.impuesto_porcentaje || 0);
-  const subtotal = state.cart.reduce((s, it) => s + (it.price * it.qty), 0);
-  const iva = subtotal * (taxPct / 100);
-  const total = subtotal + iva;
+  const subtotal = state.cart.reduce((s, it) => s + it.precio * it.cantidad, 0);
+  const desc = Math.min(subtotal, Number(posDescuento || 0));
+  const baseImp = Math.max(0, subtotal - desc);
+  const ivaPct = Number(state.config.impuesto_porcentaje || 0);
+  const impuesto = baseImp * (ivaPct / 100);
+  const total = baseImp + impuesto;
 
   $("workspace").innerHTML = `
     <div class="page-head">
-      <div><h1 class="page-title">Punto de Venta (POS)</h1><p class="page-sub">Facturación rápida de productos veterinarios, medicamentos y servicios clínicos</p></div>
-      <button class="btn" onclick="navTo('facturacion')"><i data-lucide="receipt"></i> Ver Historial de Facturas</button>
+      <div><h1 class="page-title">Punto de Venta (POS)</h1><p class="page-sub">Facturación rápida de productos, medicamentos y servicios clínicos</p></div>
+      <button class="btn" onclick="navTo('facturacion')"><i data-lucide="receipt"></i> Historial de Ventas</button>
     </div>
 
     <div class="pos-layout">
       <div class="card">
         <div class="card-head">
-          <input id="pos-q" type="search" value="${esc(posSearch)}" placeholder="Buscar producto o servicio…" style="max-width:260px">
-          <select id="pos-cat" style="width:auto">
-            <option value="">Todas las categorías</option>
-            ${cats.map(c => `<option ${posCatFilter===c?"selected":""}>${esc(c)}</option>`).join("")}
-          </select>
+          <input id="pos-q" type="search" value="${esc(posSearch)}" placeholder="Buscar producto, fármaco o servicio clínico…" style="max-width:360px">
+          <span class="badge b-teal">${prods.length + procs.length} ítems disponibles</span>
         </div>
         <div class="card-body">
-          <div class="prod-grid">
-            ${filtered.map((item, i) => `
-              <button type="button" class="prod-tile" onclick="addToCart('${item.kind}','${item.id}')">
+          ${prods.length ? `<h4 style="margin-bottom:8px;color:#475569">Productos e Inventario</h4>
+          <div class="prod-grid" style="margin-bottom:18px">
+            ${prods.map(p => `
+              <button type="button" class="prod-tile" onclick="addToCart('producto','${p.id}')">
                 <div>
-                  <span class="badge ${item.kind==="servicio"?"b-info":"b-teal"}" style="margin-bottom:6px">${esc(item.cat)}</span>
-                  <div style="font-weight:700;font-size:.9rem">${esc(item.name)}</div>
+                  <span class="badge b-gray" style="font-size:.68rem">${esc(p.categoria || "Producto")}</span>
+                  <div style="font-weight:700;margin-top:4px;font-size:.9rem">${esc(p.nombre)}</div>
                 </div>
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
-                  <strong style="color:#0d9488;font-size:1rem">${money(item.price)}</strong>
-                  ${item.stock !== null ? `<span style="font-size:.74rem;color:${item.stock<=5?"#dc2626":"#64748b"}">Stock: ${item.stock}</span>` : `<span style="font-size:.74rem;color:#64748b">Servicio</span>`}
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <strong style="color:var(--saas-pri)">${money(p.precio_venta)}</strong>
+                  <span style="font-size:.74rem;color:${Number(p.existencias)<=Number(p.stock_minimo||5)?"var(--err)":"#64748b"}">Stock: ${p.existencias}</span>
                 </div>
               </button>
-            `).join("") || `<div style="grid-column:1/-1;text-align:center;color:#64748b;padding:24px">No hay productos o servicios en el catálogo. Crea productos en <strong>Inventario</strong> o servicios en <strong>Procedimientos</strong>.</div>`}
-          </div>
+            `).join("")}
+          </div>` : ""}
+
+          ${procs.length ? `<h4 style="margin-bottom:8px;color:#475569">Servicios y Procedimientos</h4>
+          <div class="prod-grid">
+            ${procs.map(p => `
+              <button type="button" class="prod-tile" onclick="addToCart('servicio','${p.id}')">
+                <div>
+                  <span class="badge b-info" style="font-size:.68rem">${esc(p.categoria || "Servicio")}</span>
+                  <div style="font-weight:700;margin-top:4px;font-size:.9rem">${esc(p.nombre)}</div>
+                </div>
+                <strong style="color:var(--saas-sec)">${money(p.precio)}</strong>
+              </button>
+            `).join("")}
+          </div>` : ""}
+
+          ${!prods.length && !procs.length ? `<div style="text-align:center;padding:30px;color:#64748b">No hay productos o servicios creados aún. <a href="#" onclick="event.preventDefault();navTo('inventario')">Ir a Inventario</a></div>` : ""}
         </div>
       </div>
 
       <div class="card">
-        <div class="card-head"><span class="card-title">Ticket / Orden Actual</span><button class="btn sm pel" onclick="state.cart=[];viewPOS()">Vaciar</button></div>
-        <div class="card-body">
-          <div class="form-grid" style="margin-bottom:14px">
+        <div class="card-head"><span class="card-title">Ticket de Venta</span><button class="btn sm pel" onclick="state.cart=[];viewPOS()">Vaciar</button></div>
+        <div class="card-body" style="display:grid;gap:12px">
+          <div class="form-grid">
             <div>
               <label>Cliente / Propietario</label>
-              <input id="pos-client" list="dl-pos-own" placeholder="Consumidor Final">
-              <datalist id="dl-pos-own">${state.propietarios.map(p => `<option value="${esc(p.nombre)}">`).join("")}</datalist>
+              <input id="pos-cli" value="${esc(posCliente)}" list="dl-pos-cli" placeholder="Consumidor Final">
+              <datalist id="dl-pos-cli">${state.propietarios.map(p => `<option value="${esc(p.nombre)}">`).join("")}</datalist>
             </div>
             <div>
-              <label>Mascota (opcional)</label>
+              <label>Mascota Asociada</label>
               <select id="pos-pet">
-                <option value="">— Sin asociar —</option>
-                ${state.mascotas.map(m => `<option value="${m.id}">${esc(m.nombre)}</option>`).join("")}
+                <option value="">Ninguna</option>
+                ${state.mascotas.map(m => `<option value="${esc(m.nombre)}" ${posMascota===m.nombre?"selected":""}>${esc(m.nombre)}</option>`).join("")}
               </select>
             </div>
           </div>
 
-          <div style="border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;padding:10px 0;margin-bottom:12px;max-height:260px;overflow-y:auto">
+          <div style="border:1px solid #e2e8f0;border-radius:10px;max-height:260px;overflow-y:auto">
             ${state.cart.length ? state.cart.map((it, idx) => `
-              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px dashed #f1f5f9">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 12px;border-bottom:1px solid #f1f5f9">
                 <div style="min-width:0;flex:1">
-                  <div style="font-weight:600;font-size:.88rem">${esc(it.name)}</div>
-                  <div style="font-size:.76rem;color:#64748b">${money(it.price)} c/u</div>
+                  <div style="font-weight:600;font-size:.86rem">${esc(it.nombre)}</div>
+                  <div style="font-size:.76rem;color:#64748b">${money(it.precio)} c/u</div>
                 </div>
                 <div class="fila">
-                  <button type="button" class="btn sm" onclick="updCartQty(${idx},-1)">-</button>
-                  <strong style="min-width:20px;text-align:center">${it.qty}</strong>
-                  <button type="button" class="btn sm" onclick="updCartQty(${idx},1)">+</button>
+                  <button class="btn sm" onclick="updateCartQty(${idx},-1)">-</button>
+                  <strong style="min-width:20px;text-align:center">${it.cantidad}</strong>
+                  <button class="btn sm" onclick="updateCartQty(${idx},1)">+</button>
                 </div>
-                <strong style="min-width:65px;text-align:right">${money(it.price * it.qty)}</strong>
+                <strong style="min-width:68px;text-align:right">${money(it.precio * it.cantidad)}</strong>
               </div>
-            `).join("") : `<div style="text-align:center;color:#64748b;padding:24px;font-size:.88rem">Haz clic en un producto o servicio para agregarlo al carrito.</div>`}
+            `).join("") : `<div style="padding:24px;text-align:center;color:#64748b;font-size:.86rem">Selecciona productos o servicios de la izquierda para añadirlos al carrito.</div>`}
           </div>
 
-          <div style="display:grid;gap:6px;font-size:.9rem;margin-bottom:14px">
-            <div style="display:flex;justify-content:space-between"><span>Subtotal:</span><strong>${money(subtotal)}</strong></div>
-            <div style="display:flex;justify-content:space-between"><span>${esc(state.config.impuesto_nombre)} (${taxPct}%):</span><strong>${money(iva)}</strong></div>
-            <div style="display:flex;justify-content:space-between;font-size:1.2rem;color:#0d9488;border-top:1px solid #e2e8f0;padding-top:8px"><span>TOTAL:</span><strong>${money(total)}</strong></div>
+          <div class="form-grid">
+            <div><label>Descuento (${state.config.moneda})</label><input type="number" step="0.01" min="0" id="pos-desc" value="${posDescuento}"></div>
+            <div><label>Método de Pago</label><select id="pos-met">
+              ${(state.config.metodos_pago || "Efectivo, Tarjeta, Transferencia").split(",").map(s => s.trim()).filter(Boolean).map(m => `<option ${posMetodo===m?"selected":""}>${esc(m)}</option>`).join("")}
+            </select></div>
           </div>
 
-          <div style="margin-bottom:12px">
-            <label>Método de Pago</label>
-            <select id="pos-pay">
-              ${(state.config.metodos_pago || "Efectivo, Tarjeta, Transferencia").split(",").map(m => `<option>${esc(m.trim())}</option>`).join("")}
-            </select>
+          <div style="background:#f8fafc;padding:12px;border-radius:10px;display:grid;gap:4px;font-size:.9rem">
+            <div style="display:flex;justify-content:space-between"><span>Subtotal:</span><span>${money(subtotal)}</span></div>
+            <div style="display:flex;justify-content:space-between"><span>Descuento:</span><span>-${money(desc)}</span></div>
+            <div style="display:flex;justify-content:space-between"><span>${esc(state.config.impuesto_nombre || "IVA")} (${ivaPct}%):</span><span>${money(impuesto)}</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:1.18rem;font-weight:800;border-top:1px solid #cbd5e1;padding-top:6px;margin-top:4px">
+              <span>TOTAL A COBRAR:</span><span style="color:var(--saas-pri)">${money(total)}</span>
+            </div>
           </div>
 
-          <button type="button" class="btn pri" style="width:100%;min-height:44px;font-size:1rem" onclick="checkoutPOS()">Cobrar y Generar Factura</button>
+          <button type="button" class="btn pri" style="width:100%;min-height:44px;font-size:1rem" ${!state.cart.length?"disabled":""} onclick="checkoutPOS()">
+            <i data-lucide="check-circle-2"></i> Finalizar Venta y Emitir Factura
+          </button>
         </div>
       </div>
     </div>
   `;
+
   $("pos-q").oninput = e => { posSearch = e.target.value; viewPOS(); };
-  $("pos-cat").onchange = e => { posCatFilter = e.target.value; viewPOS(); };
+  $("pos-cli").oninput = e => { posCliente = e.target.value; };
+  $("pos-pet").onchange = e => { posMascota = e.target.value; };
+  $("pos-desc").onchange = e => { posDescuento = Number(e.target.value || 0); viewPOS(); };
+  $("pos-met").onchange = e => { posMetodo = e.target.value; };
+  icons();
 }
 
-function addToCart(kind, id){
-  const source = kind === "producto"
-    ? state.productos.find(p => String(p.id) === String(id))
-    : state.procedimientos.find(s => String(s.id) === String(id));
-  if (!source) return;
-  const existing = state.cart.find(c => c.kind === kind && String(c.id) === String(id));
-  if (existing) existing.qty += 1;
-  else state.cart.push({ kind, id, name: source.nombre, price: Number(kind === "producto" ? source.precio_venta : source.precio), qty: 1 });
+function addToCart(tipo, id){
+  if (tipo === "producto"){
+    const p = state.productos.find(x => x.id === id);
+    if (!p) return;
+    if (Number(p.existencias) <= 0) return toast("Producto sin existencias en inventario.", true);
+    const ex = state.cart.find(c => c.tipo === "producto" && c.id === id);
+    if (ex){
+      if (ex.cantidad + 1 > Number(p.existencias)) return toast("Stock máximo alcanzado.", true);
+      ex.cantidad++;
+    } else {
+      state.cart.push({ tipo: "producto", id: p.id, nombre: p.nombre, precio: Number(p.precio_venta || 0), cantidad: 1 });
+    }
+  } else {
+    const s = state.procedimientos.find(x => x.id === id);
+    if (!s) return;
+    const ex = state.cart.find(c => c.tipo === "servicio" && c.id === id);
+    if (ex) ex.cantidad++;
+    else state.cart.push({ tipo: "servicio", id: s.id, nombre: s.nombre, precio: Number(s.precio || 0), cantidad: 1 });
+  }
   viewPOS();
 }
-function updCartQty(idx, delta){
-  state.cart[idx].qty += delta;
-  if (state.cart[idx].qty <= 0) state.cart.splice(idx, 1);
+
+function updateCartQty(idx, delta){
+  const it = state.cart[idx];
+  if (!it) return;
+  it.cantidad += delta;
+  if (it.cantidad <= 0) state.cart.splice(idx, 1);
   viewPOS();
 }
 
 async function checkoutPOS(){
-  if (!state.cart.length) return toast("El carrito está vacío.", true);
-  const taxPct = Number(state.config.impuesto_porcentaje || 0);
-  const subtotal = state.cart.reduce((s, it) => s + (it.price * it.qty), 0);
-  const iva = subtotal * (taxPct / 100);
-  const total = subtotal + iva;
-  const numVenta = "FAC-" + String(Date.now()).slice(-6);
-  const petId = $("pos-pet").value || null;
-  const pet = state.mascotas.find(m => m.id === petId);
+  if (!state.cart.length) return;
+  const subtotal = state.cart.reduce((s, it) => s + it.precio * it.cantidad, 0);
+  const desc = Math.min(subtotal, Number(posDescuento || 0));
+  const baseImp = Math.max(0, subtotal - desc);
+  const ivaPct = Number(state.config.impuesto_porcentaje || 0);
+  const impuesto = baseImp * (ivaPct / 100);
+  const total = baseImp + impuesto;
+  const num = "FAC-" + new Date().getFullYear() + "-" + String(state.ventas.length + 1).padStart(4, "0");
 
-  const sale = await db.insert("ventas", {
-    numero_venta: numVenta,
-    cliente_nombre: $("pos-client").value.trim() || pet?.duenio_nombre || "Consumidor Final",
-    mascota_id: petId,
-    mascota_nombre: pet?.nombre || null,
+  const venta = await db.insert("ventas", {
+    numero_venta: num,
+    cliente_nombre: posCliente.trim() || "Consumidor Final",
+    mascota_nombre: posMascota || null,
     items: state.cart,
     subtotal,
-    impuesto: iva,
+    descuento: desc,
+    impuesto,
     total,
-    metodo_pago: $("pos-pay").value,
+    metodo_pago: posMetodo,
     estado_pago: "Pagada",
-    cajero: perfil.nombre
+    cajero_nombre: perfil.nombre
   });
 
   for (const it of state.cart){
-    if (it.kind === "producto"){
-      const prod = state.productos.find(p => String(p.id) === String(it.id));
-      if (prod){
-        const nuevoStock = Math.max(0, Number(prod.existencias || 0) - it.qty);
-        await db.update("productos", prod.id, { existencias: nuevoStock });
+    if (it.tipo === "producto"){
+      const p = state.productos.find(x => x.id === it.id);
+      if (p){
+        const nuevoStock = Math.max(0, Number(p.existencias || 0) - it.cantidad);
+        await db.update("productos", p.id, { existencias: nuevoStock });
         await db.insert("movimientos_inventario", {
-          producto_id: prod.id,
-          producto_nombre: prod.nombre,
-          tipo: "Salida (Venta)",
-          cantidad: it.qty,
-          motivo: `Venta ${numVenta}`,
-          usuario: perfil.nombre
+          producto_id: p.id,
+          producto_nombre: p.nombre,
+          tipo: "Salida",
+          cantidad: it.cantidad,
+          motivo: `Venta POS ${num}`,
+          usuario_nombre: perfil.nombre
         });
       }
     }
   }
 
+  log("Registró venta POS", "ventas", `${num} (${money(total)})`);
   state.cart = [];
-  log("Registró venta POS", "ventas", `${numVenta} (${money(total)})`);
-  await syncAllData(); renderSaas(); toast(`Venta ${numVenta} registrada correctamente.`);
-  if (sale) showFacturaModal(sale);
+  posDescuento = 0;
+  await syncAllData();
+  renderSaas();
+  toast(`Venta ${num} registrada por ${money(total)}.`);
+  if (venta) openFacturaModal(venta);
 }
 
 /* ============ 9. INVENTARIO ============ */
 let invSearch = "";
 function viewInventario(){
   const q = invSearch.trim().toLowerCase();
-  const list = state.productos.filter(p => (p.nombre + " " + (p.codigo||"") + " " + (p.categoria||"")).toLowerCase().includes(q));
+  const list = state.productos.filter(p => (p.nombre + " " + (p.categoria||"") + " " + (p.codigo||"") + " " + (p.laboratorio||"")).toLowerCase().includes(q));
 
   $("workspace").innerHTML = `
     <div class="page-head">
-      <div><h1 class="page-title">Inventario y Farmacia</h1><p class="page-sub">Control de medicamentos, vacunas, alimentos, lotes y alertas de stock mínimo</p></div>
-      <button class="btn pri" onclick="openProductoModal()"><i data-lucide="package-plus"></i> Nuevo Producto</button>
+      <div><h1 class="page-title">Inventario y Farmacia</h1><p class="page-sub">Control de medicamentos, insumos, alimentos, lotes y alertas de stock mínimo</p></div>
+      <div class="fila">
+        <button class="btn" onclick="openStockMoveModal()"><i data-lucide="arrow-left-right"></i> Entrada / Ajuste Stock</button>
+        <button class="btn pri" onclick="openProductoModal()"><i data-lucide="plus"></i> Nuevo Producto</button>
+      </div>
     </div>
 
     <div class="card" style="margin-bottom:18px">
       <div class="card-head">
-        <input id="inv-q" type="search" value="${esc(invSearch)}" placeholder="Buscar por nombre, código, SKU o categoría…" style="max-width:360px">
+        <input id="inv-q" type="search" value="${esc(invSearch)}" placeholder="Buscar por nombre, código, categoría o laboratorio…" style="max-width:380px">
         <span class="badge b-teal">${list.length} productos</span>
       </div>
       <div class="tbl-wrap"><table class="saas-tbl">
@@ -4099,38 +4158,37 @@ function viewInventario(){
           ${list.map(p => {
             const low = Number(p.existencias) <= Number(p.stock_minimo || 5);
             return `<tr>
-              <td style="font-size:.8rem;color:#64748b">${esc(p.codigo || p.sku || "—")}</td>
-              <td><strong>${esc(p.nombre)}</strong>${p.lote?`<div style="font-size:.75rem;color:#64748b">Lote: ${esc(p.lote)}</div>`:""}</td>
-              <td><span class="badge b-gray">${esc(p.categoria)}</span></td>
+              <td style="font-family:monospace;font-size:.8rem">${esc(p.codigo || "—")}</td>
+              <td><strong>${esc(p.nombre)}</strong><div style="font-size:.76rem;color:#64748b">${esc(p.laboratorio || "")} ${p.lote ? `· Lote ${esc(p.lote)}` : ""}</div></td>
+              <td><span class="badge b-gray">${esc(p.categoria || "General")}</span></td>
               <td>${money(p.precio_compra)}</td>
               <td><strong>${money(p.precio_venta)}</strong></td>
-              <td><span class="badge ${low ? "b-err" : "b-ok"}">${p.existencias} ${esc(p.unidad || "unid")}</span></td>
+              <td><span class="badge ${low ? "b-err" : "b-ok"}">${p.existencias} ${esc(p.unidad || "und")}</span></td>
               <td>${fecha(p.fecha_vencimiento)}</td>
               <td>
                 <div class="fila">
-                  <button class="btn sm" onclick="openStockAdjustModal('${p.id}')">± Stock</button>
                   <button class="btn sm" onclick="openProductoModal('${p.id}')">Editar</button>
                   ${isAdmin() ? `<button class="btn sm pel" onclick="delProducto('${p.id}')">Quitar</button>` : ""}
                 </div>
               </td>
             </tr>`;
-          }).join("") || `<tr><td colspan="8" style="text-align:center;padding:24px;color:#64748b">Sin productos registrados en inventario.</td></tr>`}
+          }).join("") || `<tr><td colspan="8" style="text-align:center;padding:24px;color:#64748b">No hay productos registrados.</td></tr>`}
         </tbody>
       </table></div>
     </div>
 
     <div class="card">
-      <div class="card-head"><span class="card-title">Kardex / Movimientos de Inventario (${state.movimientos.length})</span></div>
+      <div class="card-head"><span class="card-title">Últimos Movimientos de Inventario</span></div>
       <div class="tbl-wrap"><table class="saas-tbl">
         <thead><tr><th>Fecha</th><th>Producto</th><th>Tipo</th><th>Cantidad</th><th>Motivo</th><th>Usuario</th></tr></thead>
         <tbody>
-          ${state.movimientos.slice(0,25).map(mv => `<tr>
-            <td>${fechaHora(mv.creado_en)}</td>
-            <td><strong>${esc(mv.producto_nombre)}</strong></td>
-            <td><span class="badge ${mv.tipo.startsWith("Entrada")?"b-ok":"b-warn"}">${esc(mv.tipo)}</span></td>
-            <td>${mv.cantidad}</td>
-            <td>${esc(mv.motivo || "—")}</td>
-            <td>${esc(mv.usuario || "—")}</td>
+          ${state.movimientos.slice(0,12).map(m => `<tr>
+            <td>${fechaHora(m.creado_en)}</td>
+            <td><strong>${esc(m.producto_nombre)}</strong></td>
+            <td><span class="badge ${m.tipo==="Entrada"?"b-ok":m.tipo==="Salida"?"b-warn":"b-info"}">${esc(m.tipo)}</span></td>
+            <td>${m.cantidad}</td>
+            <td>${esc(m.motivo || "—")}</td>
+            <td>${esc(m.usuario_nombre || "—")}</td>
           </tr>`).join("") || `<tr><td colspan="6">Sin movimientos registrados.</td></tr>`}
         </tbody>
       </table></div>
@@ -4143,20 +4201,21 @@ function openProductoModal(id = null){
   const p = id ? state.productos.find(x => x.id === id) : null;
   const isEdit = Boolean(p);
   openModal({
-    title: isEdit ? "Editar Producto" : "Registrar Producto en Inventario",
+    title: isEdit ? "Editar Producto" : "Nuevo Producto en Inventario",
     size: "wide",
     bodyHTML: `
       <form id="f-prod" class="form-grid">
         <div><label>Código / SKU</label><input name="codigo" value="${esc(p?.codigo || "")}"></div>
-        <div><label>Categoría *</label><select name="categoria">${["Medicamentos","Vacunas","Desparasitantes","Alimentos","Accesorios","Insumos Médicos"].map(c => `<option ${p?.categoria===c?"selected":""}>${c}</option>`).join("")}</select></div>
-        <div class="full"><label>Nombre del Producto *</label><input name="nombre" value="${esc(p?.nombre || "")}" required></div>
+        <div><label>Nombre del Producto *</label><input name="nombre" value="${esc(p?.nombre || "")}" required></div>
+        <div><label>Categoría</label><select name="categoria">${["Medicamento","Vacuna","Desparasitante","Alimento","Insumo Médico","Accesorio","Higiene"].map(c => `<option ${p?.categoria===c?"selected":""}>${c}</option>`).join("")}</select></div>
+        <div><label>Laboratorio / Marca</label><input name="laboratorio" value="${esc(p?.laboratorio || "")}"></div>
         <div><label>Precio Compra (${state.config.moneda})</label><input type="number" step="0.01" name="precio_compra" value="${p?.precio_compra ?? 0}"></div>
         <div><label>Precio Venta (${state.config.moneda}) *</label><input type="number" step="0.01" name="precio_venta" value="${p?.precio_venta ?? 0}" required></div>
         <div><label>Existencias Actuales *</label><input type="number" name="existencias" value="${p?.existencias ?? 0}" required></div>
-        <div><label>Stock Mínimo (Alerta)</label><input type="number" name="stock_minimo" value="${p?.stock_minimo ?? 5}"></div>
+        <div><label>Stock Mínimo Alerta</label><input type="number" name="stock_minimo" value="${p?.stock_minimo ?? 5}"></div>
+        <div><label>Unidad</label><input name="unidad" value="${esc(p?.unidad || "Unidad")}"></div>
         <div><label>Lote</label><input name="lote" value="${esc(p?.lote || "")}"></div>
         <div><label>Fecha de Vencimiento</label><input type="date" name="fecha_vencimiento" value="${p?.fecha_vencimiento || ""}"></div>
-        <div class="full"><label>Proveedor</label><input name="proveedor" value="${esc(p?.proveedor || "")}"></div>
       </form>
     `,
     footHTML: `<button type="button" class="btn" onclick="closeModal()">Cancelar</button><button type="submit" form="f-prod" class="btn pri">Guardar Producto</button>`
@@ -4166,97 +4225,96 @@ function openProductoModal(id = null){
     const fd = new FormData(e.target);
     const payload = {
       codigo: fd.get("codigo").trim() || null,
-      categoria: fd.get("categoria"),
       nombre: fd.get("nombre").trim(),
+      categoria: fd.get("categoria"),
+      laboratorio: fd.get("laboratorio").trim() || null,
       precio_compra: Number(fd.get("precio_compra") || 0),
       precio_venta: Number(fd.get("precio_venta") || 0),
       existencias: Number(fd.get("existencias") || 0),
       stock_minimo: Number(fd.get("stock_minimo") || 5),
+      unidad: fd.get("unidad").trim() || "Unidad",
       lote: fd.get("lote").trim() || null,
-      fecha_vencimiento: fd.get("fecha_vencimiento") || null,
-      proveedor: fd.get("proveedor").trim() || null
+      fecha_vencimiento: fd.get("fecha_vencimiento") || null
     };
     if (isEdit) await db.update("productos", p.id, payload);
     else await db.insert("productos", payload);
+    log(isEdit ? "Editó producto" : "Creó producto", "productos", payload.nombre);
     closeModal(); await syncAllData(); renderSaas(); toast("Producto guardado.");
   };
 }
 
-function openStockAdjustModal(id){
-  const p = state.productos.find(x => x.id === id);
+function openStockMoveModal(){
+  if (!state.productos.length) return toast("Primero registra un producto en inventario.", true);
   openModal({
-    title: `Ajustar Stock · ${p.nombre}`,
+    title: "Registrar Movimiento de Inventario",
     bodyHTML: `
-      <form id="f-stk" class="form-grid">
-        <div><label>Tipo de Movimiento</label><select name="tipo"><option value="Entrada">Entrada (Compra / Reposición)</option><option value="Salida">Salida (Consumo interno / Merma)</option></select></div>
-        <div><label>Cantidad *</label><input type="number" min="1" name="cantidad" required value="1"></div>
-        <div class="full"><label>Motivo / Referencia</label><input name="motivo" placeholder="Ej. Factura proveedor #402"></div>
+      <form id="f-smov" class="form-grid">
+        <div class="full"><label>Producto *</label><select name="producto_id" required>${state.productos.map(p => `<option value="${p.id}">${esc(p.nombre)} (Actual: ${p.existencias})</option>`).join("")}</select></div>
+        <div><label>Tipo de Movimiento</label><select name="tipo"><option>Entrada</option><option>Salida</option><option>Ajuste</option></select></div>
+        <div><label>Cantidad *</label><input type="number" min="1" name="cantidad" value="1" required></div>
+        <div class="full"><label>Motivo / Proveedor</label><input name="motivo" placeholder="Ej. Compra factura #123, merma, uso interno…"></div>
       </form>
     `,
-    footHTML: `<button type="button" class="btn" onclick="closeModal()">Cancelar</button><button type="submit" form="f-stk" class="btn pri">Aplicar Ajuste</button>`
+    footHTML: `<button type="button" class="btn" onclick="closeModal()">Cancelar</button><button type="submit" form="f-smov" class="btn pri">Aplicar Movimiento</button>`
   });
-  $("f-stk").onsubmit = async e => {
+  $("f-smov").onsubmit = async e => {
     e.preventDefault();
     const fd = new FormData(e.target);
+    const prod = state.productos.find(p => p.id === fd.get("producto_id"));
     const tipo = fd.get("tipo");
-    const qty = Number(fd.get("cantidad") || 0);
-    const nuevo = tipo === "Entrada" ? Number(p.existencias) + qty : Math.max(0, Number(p.existencias) - qty);
-    await db.update("productos", p.id, { existencias: nuevo });
+    const cant = Number(fd.get("cantidad") || 0);
+    let nuevo = Number(prod.existencias || 0);
+    if (tipo === "Entrada") nuevo += cant;
+    else if (tipo === "Salida") nuevo = Math.max(0, nuevo - cant);
+    else nuevo = cant;
+
+    await db.update("productos", prod.id, { existencias: nuevo });
     await db.insert("movimientos_inventario", {
-      producto_id: p.id,
-      producto_nombre: p.nombre,
+      producto_id: prod.id,
+      producto_nombre: prod.nombre,
       tipo,
-      cantidad: qty,
+      cantidad: cant,
       motivo: fd.get("motivo").trim() || tipo,
-      usuario: perfil.nombre
+      usuario_nombre: perfil.nombre
     });
-    closeModal(); await syncAllData(); renderSaas(); toast("Stock actualizado.");
+    closeModal(); await syncAllData(); renderSaas(); toast("Inventario actualizado.");
   };
 }
-async function delProducto(id){ if (confirm("¿Eliminar este producto?")) { await db.remove("productos", id); await syncAllData(); renderSaas(); } }
+async function delProducto(id){ if (confirm("¿Eliminar producto?")) { await db.remove("productos", id); await syncAllData(); renderSaas(); } }
 
 /* ============ 10. FACTURACIÓN ============ */
 function viewFacturacion(){
-  const totalFacturado = state.ventas.filter(v => v.estado_pago !== "Anulada").reduce((s, v) => s + Number(v.total || 0), 0);
-
+  const totalFact = state.ventas.filter(v => v.estado_pago !== "Anulada").reduce((s, v) => s + Number(v.total || 0), 0);
   $("workspace").innerHTML = `
     <div class="page-head">
-      <div><h1 class="page-title">Facturación y Comprobantes</h1><p class="page-sub">Historial de facturas, recibos, pagos y exportación contable</p></div>
-      <div class="fila">
-        <button class="btn" onclick="exportVentasCSV()"><i data-lucide="download"></i> Exportar CSV</button>
-        <button class="btn pri" onclick="navTo('pos')"><i data-lucide="plus"></i> Nueva Factura (POS)</button>
-      </div>
-    </div>
-
-    <div class="kpi-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
-      <div class="kpi-card"><div><div class="kpi-label">Total Facturado</div><div class="kpi-val">${money(totalFacturado)}</div></div><div class="kpi-ico" style="background:#dcfce7;color:#15803d"><i data-lucide="dollar-sign"></i></div></div>
-      <div class="kpi-card"><div><div class="kpi-label">Comprobantes Emitidos</div><div class="kpi-val">${state.ventas.length}</div></div><div class="kpi-ico" style="background:#dbeafe;color:#1d4ed8"><i data-lucide="receipt"></i></div></div>
+      <div><h1 class="page-title">Facturación y Comprobantes</h1><p class="page-sub">Registro de facturas emitidas, impuestos y métodos de pago · Total acumulado: <strong>${money(totalFact)}</strong></p></div>
+      <button class="btn pri" onclick="navTo('pos')"><i data-lucide="shopping-cart"></i> Nueva Factura en POS</button>
     </div>
 
     <div class="card"><div class="tbl-wrap"><table class="saas-tbl">
-      <thead><tr><th>N° Comprobante</th><th>Fecha</th><th>Cliente</th><th>Mascota</th><th>Método Pago</th><th>Total</th><th>Estado</th><th>Acciones</th></tr></thead>
+      <thead><tr><th>N° Factura</th><th>Fecha</th><th>Cliente</th><th>Mascota</th><th>Método</th><th>Total</th><th>Estado</th><th>Acciones</th></tr></thead>
       <tbody>
         ${state.ventas.map(v => `<tr>
           <td><strong>${esc(v.numero_venta)}</strong></td>
           <td>${fechaHora(v.creado_en)}</td>
-          <td>${esc(v.cliente_nombre)}</td>
+          <td>${esc(v.cliente_nombre || "Consumidor Final")}</td>
           <td>${esc(v.mascota_nombre || "—")}</td>
-          <td>${esc(v.metodo_pago)}</td>
+          <td>${esc(v.metodo_pago || "—")}</td>
           <td><strong>${money(v.total)}</strong></td>
           <td><span class="badge ${v.estado_pago==="Anulada"?"b-err":"b-ok"}">${esc(v.estado_pago)}</span></td>
           <td>
             <div class="fila">
-              <button class="btn sm" onclick='showFacturaModal(${JSON.stringify(v).replace(/'/g,"&#39;")})'>Ver / Imprimir</button>
+              <button class="btn sm" onclick='openFacturaModal(${JSON.stringify(v).replace(/'/g,"&#39;")})'>Ver / Imprimir</button>
               ${v.estado_pago!=="Anulada" && isAdmin() ? `<button class="btn sm pel" onclick="anularVenta('${v.id}')">Anular</button>` : ""}
             </div>
           </td>
-        </tr>`).join("") || `<tr><td colspan="8" style="text-align:center;padding:24px;color:#64748b">Aún no hay facturas emitidas.</td></tr>`}
+        </tr>`).join("") || `<tr><td colspan="8" style="text-align:center;padding:24px;color:#64748b">Aún no se han emitido facturas.</td></tr>`}
       </tbody>
     </table></div></div>
   `;
 }
 
-function showFacturaModal(v){
+function openFacturaModal(v){
   const items = Array.isArray(v.items) ? v.items : [];
   const logo = getBrandLogoUrl();
   openModal({
@@ -4264,108 +4322,134 @@ function showFacturaModal(v){
     size: "wide",
     bodyHTML: `
       <div style="padding:18px;border:1px solid #cbd5e1;border-radius:10px">
-        <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #0d9488;padding-bottom:10px;margin-bottom:14px">
+        <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #0d9488;padding-bottom:12px;margin-bottom:14px">
           <div style="display:flex;align-items:center;gap:10px">
             ${logo ? `<img src="${esc(logo)}" alt="Logo" style="width:42px;height:42px;object-fit:contain">` : ""}
-            <div><h2 style="color:#0d9488">${esc(state.config.nombre_clinica)}</h2><div style="font-size:.8rem;color:#64748b">RUC/NIT: ${esc(state.config.nit_ruc)} · ${esc(state.config.direccion)}</div></div>
+            <div><h2 style="color:#0d9488">${esc(state.config.nombre_clinica)}</h2><div style="font-size:.8rem;color:#475569">RUC/NIT: ${esc(state.config.nit_ruc)} · ${esc(state.config.direccion)}</div></div>
           </div>
           <div style="text-align:right"><strong>${esc(v.numero_venta)}</strong><div style="font-size:.8rem">${fechaHora(v.creado_en)}</div></div>
         </div>
         <p style="font-size:.88rem"><strong>Cliente:</strong> ${esc(v.cliente_nombre)} &nbsp;|&nbsp; <strong>Paciente:</strong> ${esc(v.mascota_nombre || "—")} &nbsp;|&nbsp; <strong>Pago:</strong> ${esc(v.metodo_pago)}</p>
         <table class="saas-tbl" style="margin:12px 0">
           <thead><tr><th>Descripción</th><th>Cant.</th><th>P. Unit</th><th>Importe</th></tr></thead>
-          <tbody>${items.map(it => `<tr><td>${esc(it.name)}</td><td>${it.qty}</td><td>${money(it.price)}</td><td><strong>${money(it.price * it.qty)}</strong></td></tr>`).join("")}</tbody>
+          <tbody>${items.map(it => `<tr><td>${esc(it.nombre)}</td><td>${it.cantidad}</td><td>${money(it.precio)}</td><td><strong>${money(it.precio * it.cantidad)}</strong></td></tr>`).join("")}</tbody>
         </table>
-        <div style="text-align:right;font-size:.92rem">
-          <div>Subtotal: <strong>${money(v.subtotal)}</strong></div>
-          <div>${esc(state.config.impuesto_nombre)}: <strong>${money(v.impuesto)}</strong></div>
-          <div style="font-size:1.15rem;color:#0d9488;margin-top:4px">Total Pagado: <strong>${money(v.total)}</strong></div>
+        <div style="text-align:right;font-size:.92rem;display:grid;gap:4px">
+          <div>Subtotal: ${money(v.subtotal)}</div>
+          <div>Descuento: -${money(v.descuento)}</div>
+          <div>Impuesto: ${money(v.impuesto)}</div>
+          <div style="font-size:1.15rem;font-weight:800;color:#0d9488">TOTAL: ${money(v.total)}</div>
         </div>
       </div>
     `,
-    footHTML: `<button type="button" class="btn" onclick="closeModal()">Cerrar</button><button type="button" class="btn pri" onclick="window.print()">Imprimir / PDF</button>`
+    footHTML: `<button type="button" class="btn" onclick="closeModal()">Cerrar</button><button type="button" class="btn pri" onclick="window.print()">Imprimir Comprobante</button>`
   });
 }
-
-async function anularVenta(id){
-  if (!confirm("¿Anular esta factura?")) return;
-  await db.update("ventas", id, { estado_pago: "Anulada" });
-  await syncAllData(); renderSaas(); toast("Factura anulada.");
-}
-
-function exportVentasCSV(){
-  const rows = [["Numero","Fecha","Cliente","Mascota","Metodo","Subtotal","Impuesto","Total","Estado"]];
-  state.ventas.forEach(v => rows.push([v.numero_venta, v.creado_en, v.cliente_nombre, v.mascota_nombre||"", v.metodo_pago, v.subtotal, v.impuesto, v.total, v.estado_pago]));
-  const csv = rows.map(r => r.map(x => `"${String(x??"").replace(/"/g,'""')}"`).join(",")).join("\n");
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(new Blob([csv], {type:"text/csv"}));
-  a.download = `vexavet_ventas_${hoy()}.csv`;
-  a.click();
-}
+async function anularVenta(id){ if (confirm("¿Anular esta factura?")) { await db.update("ventas", id, {estado_pago: "Anulada"}); await syncAllData(); renderSaas(); toast("Factura anulada."); } }
 
 /* ============ 11. RECORDATORIOS Y NOTIFICACIONES ============ */
 function viewRecordatorios(){
   const alerts = computeAlerts();
   $("workspace").innerHTML = `
     <div class="page-head">
-      <div><h1 class="page-title">Recordatorios y Alertas Automáticas</h1><p class="page-sub">Seguimiento preventivo de vacunas, desparasitaciones, citas e inventario</p></div>
+      <div><h1 class="page-title">Recordatorios y Alertas Automáticas</h1><p class="page-sub">Seguimiento preventivo de vacunas, desparasitaciones, citas y stock crítico</p></div>
+      <button class="btn pri" onclick="openRecordatorioModal()"><i data-lucide="plus"></i> Nuevo Recordatorio Manual</button>
     </div>
 
-    <div class="card"><div class="tbl-wrap"><table class="saas-tbl">
-      <thead><tr><th>Categoría</th><th>Paciente / Ítem</th><th>Detalle</th><th>Propietario</th><th>Acción Rápida</th></tr></thead>
-      <tbody>
-        ${alerts.map(a => {
-          const tel = (a.phone || "").replace(/\D/g, "");
-          const msg = encodeURIComponent(`Hola ${a.owner || ""}, te saludamos de ${state.config.nombre_clinica}. Te recordamos sobre ${a.title}: ${a.desc}.`);
-          return `<tr>
+    <div class="card" style="margin-bottom:18px">
+      <div class="card-head"><span class="card-title">Alertas Automáticas del Sistema (${alerts.length})</span></div>
+      <div class="tbl-wrap"><table class="saas-tbl">
+        <thead><tr><th>Categoría</th><th>Detalle</th><th>Propietario</th><th>Estado</th><th>Acción Rápida</th></tr></thead>
+        <tbody>
+          ${alerts.map(a => `<tr>
             <td><span class="badge b-${a.type==="err"?"err":a.type==="warn"?"warn":"info"}">${esc(a.cat)}</span></td>
-            <td><strong>${esc(a.title)}</strong></td>
-            <td>${esc(a.desc)}</td>
-            <td>${esc(a.owner || "—")} ${a.phone ? `<div style="font-size:.76rem;color:#64748b">${esc(a.phone)}</div>` : ""}</td>
+            <td><strong>${esc(a.title)}</strong><div style="font-size:.78rem;color:#64748b">${esc(a.desc)}</div></td>
+            <td>${esc(a.owner || "Interno")}${a.phone ? `<div style="font-size:.76rem;color:#64748b">${esc(a.phone)}</div>` : ""}</td>
+            <td>${a.type === "err" ? "Vencido" : "Próximo"}</td>
             <td>
               <div class="fila">
-                ${tel ? `<a class="btn sm verde" target="_blank" href="https://wa.me/${tel}?text=${msg}">WhatsApp</a>` : ""}
-                ${a.petId ? `<button class="btn sm" onclick="navTo('historia','${a.petId}')">Ver Historia</button>` : ""}
+                ${a.phone ? `<a class="btn sm verde" target="_blank" href="https://wa.me/${a.phone.replace(/\D/g,"")}?text=${encodeURIComponent(`Hola ${a.owner}, te recordamos desde ${state.config.nombre_clinica}: ${a.title} (${a.desc}).`)}">WhatsApp</a>` : ""}
+                ${a.petId ? `<button class="btn sm" onclick="navTo('historia','${a.petId}')">Abrir Ficha</button>` : ""}
               </div>
             </td>
-          </tr>`;
-        }).join("") || `<tr><td colspan="5" style="text-align:center;padding:28px;color:#64748b">No hay alertas ni recordatorios pendientes hoy.</td></tr>`}
-      </tbody>
-    </table></div></div>
+          </tr>`).join("") || `<tr><td colspan="5" style="text-align:center;padding:24px;color:#64748b">No hay alertas pendientes hoy.</td></tr>`}
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="card-title">Recordatorios Programados Manualmente (${state.notificaciones.length})</span></div>
+      <div class="tbl-wrap"><table class="saas-tbl">
+        <thead><tr><th>Fecha</th><th>Tipo</th><th>Título</th><th>Mensaje</th><th>Estado</th><th></th></tr></thead>
+        <tbody>
+          ${state.notificaciones.map(n => `<tr>
+            <td>${fecha(n.fecha_programada)}</td>
+            <td><span class="badge b-teal">${esc(n.tipo)}</span></td>
+            <td><strong>${esc(n.titulo)}</strong></td>
+            <td>${esc(n.mensaje || "—")}</td>
+            <td><span class="badge ${n.estado==="Enviado"?"b-ok":"b-warn"}">${esc(n.estado)}</span></td>
+            <td><button class="btn sm" onclick="marcarNotifEnviada('${n.id}')">Marcar Enviado</button></td>
+          </tr>`).join("") || `<tr><td colspan="6">Sin recordatorios manuales registrados.</td></tr>`}
+        </tbody>
+      </table></div>
+    </div>
   `;
 }
 
-/* ============ 12. MARKETING Y FIDELIZACIÓN ============ */
-function viewMarketing(){
-  const inactivePets = state.mascotas.filter(m => {
-    const last = state.consultas.find(c => c.mascota_id === m.id);
-    if (!last) return true;
-    return (Date.now() - new Date(last.fecha).getTime()) > 180 * 86400000;
+function openRecordatorioModal(){
+  openModal({
+    title: "Programar Recordatorio",
+    bodyHTML: `
+      <form id="f-rec" class="form-grid">
+        <div><label>Tipo</label><select name="tipo"><option>Vacunación</option><option>Desparasitación</option><option>Control Post-Quirúrgico</option><option>Cita</option><option>Otro</option></select></div>
+        <div><label>Fecha Programada *</label><input type="date" name="fecha_programada" value="${hoy()}" required></div>
+        <div class="full"><label>Título *</label><input name="titulo" required placeholder="Ej. Refuerzo Séxtuple · Max"></div>
+        <div class="full"><label>Mensaje</label><textarea name="mensaje"></textarea></div>
+      </form>
+    `,
+    footHTML: `<button type="button" class="btn" onclick="closeModal()">Cancelar</button><button type="submit" form="f-rec" class="btn pri">Guardar</button>`
   });
+  $("f-rec").onsubmit = async e => {
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    await db.insert("notificaciones", {
+      tipo: fd.get("tipo"),
+      fecha_programada: fd.get("fecha_programada"),
+      titulo: fd.get("titulo").trim(),
+      mensaje: fd.get("mensaje").trim() || null,
+      estado: "Pendiente"
+    });
+    closeModal(); await syncAllData(); renderSaas(); toast("Recordatorio creado.");
+  };
+}
+async function marcarNotifEnviada(id){ await db.update("notificaciones", id, {estado: "Enviado"}); await syncAllData(); renderSaas(); }
 
+/* ============ 12. MARKETING ============ */
+function viewMarketing(){
   $("workspace").innerHTML = `
     <div class="page-head">
-      <div><h1 class="page-title">Marketing y Fidelización de Clientes</h1><p class="page-sub">Segmentación de pacientes, campañas promocionales y reactivación de clientes inactivos</p></div>
+      <div><h1 class="page-title">Marketing y Fidelización</h1><p class="page-sub">Campañas preventivas, segmentación por especie y comunicación directa con tutores</p></div>
       <button class="btn pri" onclick="openCampanaModal()"><i data-lucide="megaphone"></i> Nueva Campaña</button>
     </div>
 
     <div class="kpi-grid">
-      <div class="kpi-card"><div><div class="kpi-label">Base Total de Clientes</div><div class="kpi-val">${state.propietarios.length}</div></div><div class="kpi-ico" style="background:#ccfbf1;color:#0f766e"><i data-lucide="users"></i></div></div>
-      <div class="kpi-card"><div><div class="kpi-label">Pacientes sin Control (+6 meses)</div><div class="kpi-val">${inactivePets.length}</div><div class="kpi-foot">Oportunidad de reactivación</div></div><div class="kpi-ico" style="background:#fef3c7;color:#b45309"><i data-lucide="user-check"></i></div></div>
-      <div class="kpi-card"><div><div class="kpi-label">Campañas Creadas</div><div class="kpi-val">${state.campanas.length}</div></div><div class="kpi-ico" style="background:#dbeafe;color:#1d4ed8"><i data-lucide="send"></i></div></div>
+      <div class="kpi-card"><div><div class="kpi-label">Base Total Propietarios</div><div class="kpi-val">${state.propietarios.length}</div></div><div class="kpi-ico" style="background:#ccfbf1;color:#0f766e"><i data-lucide="users"></i></div></div>
+      <div class="kpi-card"><div><div class="kpi-label">Tutores de Perros</div><div class="kpi-val">${state.mascotas.filter(m=>m.especie==="Perro").length}</div></div><div class="kpi-ico" style="background:#dbeafe;color:#1d4ed8"><i data-lucide="paw-print"></i></div></div>
+      <div class="kpi-card"><div><div class="kpi-label">Tutores de Gatos</div><div class="kpi-val">${state.mascotas.filter(m=>m.especie==="Gato").length}</div></div><div class="kpi-ico" style="background:#fef3c7;color:#b45309"><i data-lucide="cat"></i></div></div>
+      <div class="kpi-card"><div><div class="kpi-label">Campañas Creadas</div><div class="kpi-val">${state.campanas.length}</div></div><div class="kpi-ico" style="background:#dcfce7;color:#15803d"><i data-lucide="send"></i></div></div>
     </div>
 
     <div class="card"><div class="tbl-wrap"><table class="saas-tbl">
-      <thead><tr><th>Campaña</th><th>Segmento</th><th>Canal</th><th>Destinatarios</th><th>Estado</th><th>Acción</th></tr></thead>
+      <thead><tr><th>Campaña</th><th>Segmento</th><th>Canal</th><th>Mensaje</th><th>Estado</th><th>Acciones</th></tr></thead>
       <tbody>
         ${state.campanas.map(c => `<tr>
-          <td><strong>${esc(c.nombre)}</strong><div style="font-size:.77rem;color:#64748b">${esc((c.mensaje||"").slice(0,70))}…</div></td>
-          <td>${esc(c.segmento)}</td>
-          <td><span class="badge b-info">${esc(c.canal)}</span></td>
-          <td>${c.destinatarios_count}</td>
+          <td><strong>${esc(c.nombre)}</strong></td>
+          <td><span class="badge b-info">${esc(c.segmento)}</span></td>
+          <td>${esc(c.canal)}</td>
+          <td style="max-width:340px">${esc(c.mensaje)}</td>
           <td><span class="badge ${c.estado==="Enviada"?"b-ok":"b-warn"}">${esc(c.estado)}</span></td>
-          <td>${c.estado!=="Enviada" ? `<button class="btn sm pri" onclick="sendCampana('${c.id}')">Ejecutar Envío</button>` : "✓ Completada"}</td>
-        </tr>`).join("") || `<tr><td colspan="6" style="text-align:center;padding:24px;color:#64748b">Crea tu primera campaña de vacunación o chequeo preventivo.</td></tr>`}
+          <td><button class="btn sm pri" onclick="lanzarCampana('${c.id}')">Ejecutar Envío</button></td>
+        </tr>`).join("") || `<tr><td colspan="6" style="text-align:center;padding:24px;color:#64748b">Aún no has creado campañas de fidelización.</td></tr>`}
       </tbody>
     </table></div></div>
   `;
@@ -4373,13 +4457,13 @@ function viewMarketing(){
 
 function openCampanaModal(){
   openModal({
-    title: "Crear Campaña de Marketing",
+    title: "Crear Campaña de Fidelización",
     bodyHTML: `
       <form id="f-camp" class="form-grid">
-        <div class="full"><label>Nombre de la Campaña *</label><input name="nombre" required placeholder="Ej. Jornada de Vacunación Anual 2026"></div>
-        <div><label>Segmento Objetivo</label><select name="segmento"><option>Todos los propietarios</option><option>Dueños de Perros</option><option>Dueños de Gatos</option><option>Clientes inactivos (+6 meses)</option></select></div>
+        <div class="full"><label>Nombre de la Campaña *</label><input name="nombre" required placeholder="Ej. Jornada de Profilaxis Dental 20% OFF"></div>
+        <div><label>Segmento Objetivo</label><select name="segmento"><option>Todos los propietarios</option><option>Propietarios de Perros</option><option>Propietarios de Gatos</option><option>Vacunas próximas a vencer</option></select></div>
         <div><label>Canal</label><select name="canal"><option>WhatsApp</option><option>Correo Electrónico</option><option>SMS</option></select></div>
-        <div class="full"><label>Mensaje *</label><textarea name="mensaje" required>Hola {cliente}, en ${state.config.nombre_clinica} tenemos 20% de descuento en chequeo preventivo y vacunas este mes. ¡Agenda tu cita!</textarea></div>
+        <div class="full"><label>Mensaje Promocional *</label><textarea name="mensaje" required placeholder="Hola {nombre}, en VEXAVET tenemos un beneficio especial para tu mascota…"></textarea></div>
       </form>
     `,
     footHTML: `<button type="button" class="btn" onclick="closeModal()">Cancelar</button><button type="submit" form="f-camp" class="btn pri">Guardar Campaña</button>`
@@ -4392,120 +4476,106 @@ function openCampanaModal(){
       segmento: fd.get("segmento"),
       canal: fd.get("canal"),
       mensaje: fd.get("mensaje").trim(),
-      destinatarios_count: state.propietarios.length,
-      estado: "Programada"
+      estado: "Borrador"
     });
-    closeModal(); await syncAllData(); renderSaas(); toast("Campaña creada.");
+    closeModal(); await syncAllData(); renderSaas(); toast("Campaña guardada.");
   };
 }
-
-async function sendCampana(id){
-  await db.update("campanas_marketing", id, { estado: "Enviada", fecha_envio: new Date().toISOString() });
-  log("Ejecutó campaña marketing", "campanas_marketing", id);
-  await syncAllData(); renderSaas(); toast("Campaña marcada como enviada.");
+async function lanzarCampana(id){
+  await db.update("campanas_marketing", id, { estado: "Enviada", total_destinatarios: state.propietarios.length });
+  await syncAllData(); renderSaas(); toast(`Campaña marcada como enviada a ${state.propietarios.length} destinatarios.`);
 }
 
 /* ============ 13. INFORMES Y ESTADÍSTICAS ============ */
-let repCharts = [];
 function viewInformes(){
-  repCharts.forEach(c => c.destroy());
-  repCharts = [];
-
-  const ingresosTot = state.ventas.filter(v => v.estado_pago !== "Anulada").reduce((s, v) => s + Number(v.total || 0), 0);
-  const ticketProm = state.ventas.length ? ingresosTot / state.ventas.length : 0;
+  const ventasValidas = state.ventas.filter(v => v.estado_pago !== "Anulada");
+  const ingresos = ventasValidas.reduce((s, v) => s + Number(v.total || 0), 0);
+  const ticketProm = ventasValidas.length ? ingresos / ventasValidas.length : 0;
 
   $("workspace").innerHTML = `
     <div class="page-head">
-      <div><h1 class="page-title">Informes y Analítica Gerencial</h1><p class="page-sub">Indicadores financieros, médicos y operativos de la clínica</p></div>
-      <button class="btn pri" onclick="window.print()"><i data-lucide="printer"></i> Imprimir / Exportar PDF</button>
+      <div><h1 class="page-title">Informes y Estadísticas</h1><p class="page-sub">Reportes ejecutivos, exportación CSV y resumen financiero</p></div>
+      <div class="fila">
+        <button class="btn" onclick="exportCSV('mascotas')"><i data-lucide="download"></i> Exportar Pacientes CSV</button>
+        <button class="btn" onclick="exportCSV('ventas')"><i data-lucide="download"></i> Exportar Ventas CSV</button>
+        <button class="btn pri" onclick="window.print()"><i data-lucide="printer"></i> Imprimir Informe</button>
+      </div>
     </div>
 
     <div class="kpi-grid">
-      <div class="kpi-card"><div><div class="kpi-label">Ingresos Acumulados</div><div class="kpi-val">${money(ingresosTot)}</div></div><div class="kpi-ico" style="background:#dcfce7;color:#15803d"><i data-lucide="trending-up"></i></div></div>
-      <div class="kpi-card"><div><div class="kpi-label">Ticket Promedio</div><div class="kpi-val">${money(ticketProm)}</div></div><div class="kpi-ico" style="background:#dbeafe;color:#1d4ed8"><i data-lucide="credit-card"></i></div></div>
-      <div class="kpi-card"><div><div class="kpi-label">Total Consultas</div><div class="kpi-val">${state.consultas.length}</div></div><div class="kpi-ico" style="background:#ccfbf1;color:#0f766e"><i data-lucide="stethoscope"></i></div></div>
-      <div class="kpi-card"><div><div class="kpi-label">Total Vacunas Aplicadas</div><div class="kpi-val">${state.vacunas.length}</div></div><div class="kpi-ico" style="background:#fef3c7;color:#b45309"><i data-lucide="syringe"></i></div></div>
+      <div class="kpi-card"><div><div class="kpi-label">Ingresos Totales</div><div class="kpi-val">${money(ingresos)}</div></div><div class="kpi-ico" style="background:#dcfce7;color:#15803d"><i data-lucide="trending-up"></i></div></div>
+      <div class="kpi-card"><div><div class="kpi-label">Ticket Promedio</div><div class="kpi-val">${money(ticketProm)}</div></div><div class="kpi-ico" style="background:#dbeafe;color:#1d4ed8"><i data-lucide="receipt"></i></div></div>
+      <div class="kpi-card"><div><div class="kpi-label">Consultas Clínicas</div><div class="kpi-val">${state.consultas.length}</div></div><div class="kpi-ico" style="background:#ccfbf1;color:#0f766e"><i data-lucide="stethoscope"></i></div></div>
+      <div class="kpi-card"><div><div class="kpi-label">Cirugías Realizadas</div><div class="kpi-val">${state.cirugias.length}</div></div><div class="kpi-ico" style="background:#fee2e2;color:#b91c1c"><i data-lucide="activity"></i></div></div>
     </div>
 
     <div class="grid-2">
       <div class="card">
         <div class="card-head"><span class="card-title">Ingresos por Método de Pago</span></div>
-        <div class="card-body" style="max-width:340px;margin:0 auto"><canvas id="rep-pay-chart" height="200"></canvas></div>
+        <div class="tbl-wrap"><table class="saas-tbl">
+          <thead><tr><th>Método</th><th>Transacciones</th><th>Total Recaudado</th></tr></thead>
+          <tbody>
+            ${Object.entries(ventasValidas.reduce((acc, v) => {
+              const m = v.metodo_pago || "Otro";
+              acc[m] = acc[m] || { count: 0, sum: 0 };
+              acc[m].count++; acc[m].sum += Number(v.total || 0);
+              return acc;
+            }, {})).map(([m, d]) => `<tr><td><strong>${esc(m)}</strong></td><td>${d.count}</td><td><strong>${money(d.sum)}</strong></td></tr>`).join("") || `<tr><td colspan="3">Sin ventas registradas.</td></tr>`}
+          </tbody>
+        </table></div>
       </div>
+
       <div class="card">
-        <div class="card-head"><span class="card-title">Servicios Más Solicitados en Agenda</span></div>
-        <div class="card-body"><canvas id="rep-srv-chart" height="200"></canvas></div>
+        <div class="card-head"><span class="card-title">Producción por Médico Veterinario</span></div>
+        <div class="tbl-wrap"><table class="saas-tbl">
+          <thead><tr><th>Profesional</th><th>Consultas</th><th>Vacunas Aplicadas</th></tr></thead>
+          <tbody>
+            ${Array.from(new Set([...state.consultas.map(c=>c.veterinario), ...state.vacunas.map(v=>v.veterinario)].filter(Boolean))).map(vet => `
+              <tr>
+                <td><strong>${esc(vet)}</strong></td>
+                <td>${state.consultas.filter(c=>c.veterinario===vet).length}</td>
+                <td>${state.vacunas.filter(v=>v.veterinario===vet).length}</td>
+              </tr>
+            `).join("") || `<tr><td colspan="3">Sin datos clínicos aún.</td></tr>`}
+          </tbody>
+        </table></div>
       </div>
     </div>
   `;
+}
 
-  if (window.Chart){
-    const payMap = {};
-    state.ventas.filter(v => v.estado_pago !== "Anulada").forEach(v => {
-      const m = v.metodo_pago || "Efectivo";
-      payMap[m] = (payMap[m] || 0) + Number(v.total || 0);
-    });
-    repCharts.push(new Chart($("rep-pay-chart"), {
-      type: "pie",
-      data: {
-        labels: Object.keys(payMap).length ? Object.keys(payMap) : ["Sin ventas"],
-        datasets: [{ data: Object.keys(payMap).length ? Object.values(payMap) : [1], backgroundColor: ["#0d9488","#2563eb","#f59e0b","#8b5cf6"] }]
-      }
-    }));
-
-    const srvMap = {};
-    state.citas.forEach(c => { const s = c.tipo_servicio || "Consulta"; srvMap[s] = (srvMap[s] || 0) + 1; });
-    repCharts.push(new Chart($("rep-srv-chart"), {
-      type: "bar",
-      data: {
-        labels: Object.keys(srvMap).length ? Object.keys(srvMap) : ["Sin datos"],
-        datasets: [{ label: "Citas", data: Object.keys(srvMap).length ? Object.values(srvMap) : [0], backgroundColor: "#2563eb", borderRadius: 6 }]
-      },
-      options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { precision: 0 } } } }
-    }));
-  }
+function exportCSV(tipo){
+  const rows = tipo === "ventas" ? state.ventas : state.mascotas;
+  if (!rows.length) return toast("No hay datos para exportar.", true);
+  const cols = Object.keys(rows[0]).filter(k => typeof rows[0][k] !== "object");
+  const csv = [cols.join(","), ...rows.map(r => cols.map(c => `"${String(r[c] ?? "").replace(/"/g,'""')}"`).join(","))].join("\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob(["\uFEFF" + csv], {type: "text/csv;charset=utf-8;"}));
+  a.download = `vexavet_${tipo}_${hoy()}.csv`;
+  a.click();
 }
 
 /* ============ 14. USUARIOS Y ROLES ============ */
-let euUserPhotoUrl = "";
-function refreshEditUserAvatar(){
-  const name = $("e-n").value.trim() || $("e-u").value.trim() || "U";
-  $("eu-ava-prev").innerHTML = avatarHTML(euUserPhotoUrl, name);
-  $("eu-foto-del").hidden = !euUserPhotoUrl;
-}
-$("eu-foto-file").onchange = async e => {
-  const f = e.target.files[0];
-  if (!f) return;
-  try {
-    euUserPhotoUrl = await uploadBrandingOrAvatar(f, "perfiles", 400, false);
-    refreshEditUserAvatar();
-    toast("Foto lista para guardar.");
-  } catch { toast("No se pudo procesar la imagen.", true); }
-  e.target.value = "";
-};
-$("eu-foto-del").onclick = () => {
-  euUserPhotoUrl = "";
-  refreshEditUserAvatar();
-};
-$("e-n").addEventListener("input", refreshEditUserAvatar);
+async function viewUsuarios(){
+  if (!isAdmin()){ viewDashboard(); return; }
+  const { data: users } = await sb.from("perfiles").select("*").order("creado_en");
+  state.perfiles = (users || []).map(u => ({ ...u, foto_url: getUserFoto(u) }));
 
-function viewUsuarios(){
-  if (!isAdmin()) return viewDashboard();
   $("workspace").innerHTML = `
     <div class="page-head">
-      <div><h1 class="page-title">Gestión de Usuarios y Roles</h1><p class="page-sub">Control de acceso del personal veterinario y administrativo</p></div>
+      <div><h1 class="page-title">Usuarios, Roles y Permisos</h1><p class="page-sub">Control de acceso para médicos veterinarios, auxiliares y administradores</p></div>
     </div>
 
-    <div class="grid-2" style="align-items:start">
+    <div class="grid-2">
       <div class="card">
-        <div class="card-head"><span class="card-title">Crear Nuevo Usuario</span></div>
+        <div class="card-head"><span class="card-title">Crear Nuevo Usuario del Sistema</span></div>
         <div class="card-body">
-          <form id="f-new-user" style="display:grid;gap:12px">
-            <div><label>Usuario *</label><input name="usuario" required pattern="[a-zA-Z0-9._-]{3,30}" autocapitalize="none" placeholder="ej. dra.martinez"></div>
-            <div><label>Nombre Completo *</label><input name="nombre" required placeholder="Dra. Laura Martínez"></div>
-            <div><label>Rol *</label><select name="rol"><option value="veterinario">Veterinario</option><option value="administrador">Administrador</option></select></div>
-            <div><label>Contraseña Inicial (mín. 6) *</label><input type="password" name="password" minlength="6" required></div>
-            <button class="btn pri">Crear Usuario</button>
+          <form id="f-newuser" style="display:grid;gap:12px">
+            <div><label>Usuario *</label><input name="u" required pattern="[a-zA-Z0-9._-]{3,30}" autocapitalize="none" placeholder="ej. dra.gomez"></div>
+            <div><label>Nombre Completo *</label><input name="n" required placeholder="Dra. Laura Gómez"></div>
+            <div><label>Rol *</label><select name="r"><option value="${ROL_VET}">Veterinario</option><option value="${ROL_ADMIN}">Administrador</option></select></div>
+            <div><label>Contraseña Inicial *</label><input name="p" type="password" minlength="6" required></div>
+            <button class="btn pri">Crear Cuenta</button>
           </form>
         </div>
       </div>
@@ -4513,27 +4583,25 @@ function viewUsuarios(){
       <div class="card">
         <div class="card-head"><span class="card-title">Personal Registrado (${state.perfiles.length})</span></div>
         <div class="tbl-wrap"><table class="saas-tbl">
-          <thead><tr><th>Usuario / Nombre</th><th>Rol</th><th>Estado</th><th>Acciones</th></tr></thead>
+          <thead><tr><th>Usuario</th><th>Nombre</th><th>Rol</th><th>Estado</th><th>Acciones</th></tr></thead>
           <tbody>
             ${state.perfiles.map(u => {
               const yo = u.id === perfil.id;
               return `<tr>
                 <td>
-                  <div style="display:flex;align-items:center;gap:10px">
-                    <div class="user-ava" style="width:36px;height:36px;font-size:.88rem">${userAvatarHTML(u)}</div>
-                    <div>
-                      <strong>${esc(u.nombre)}</strong>${yo?" (tú)":""}
-                      <div style="font-size:.78rem;color:#64748b">@${esc(u.usuario||u.email)}</div>
-                    </div>
+                  <div style="display:flex;align-items:center;gap:9px">
+                    <span class="user-ava" style="width:32px;height:32px">${userAvatarHTML(u)}</span>
+                    <strong>${esc(u.usuario || u.email)}</strong>
                   </div>
                 </td>
+                <td>${esc(u.nombre)}${yo ? ` <span class="badge b-teal">tú</span>` : ""}</td>
                 <td style="text-transform:capitalize">${esc(u.rol)}</td>
                 <td><span class="badge ${u.activo?"b-ok":"b-err"}">${u.activo?"Activo":"Bloqueado"}</span></td>
                 <td>
                   <div class="fila">
-                    <button class="btn sm" onclick="openEditUserModal('${u.id}')">Editar</button>
-                    ${!yo ? `<button class="btn sm ${u.activo?"rojo":"verde"}" onclick="toggleUserActive('${u.id}',${!u.activo})">${u.activo?"Bloquear":"Activar"}</button>` : ""}
-                    ${!yo ? `<button class="btn sm pel" onclick="deleteUser('${u.id}','${esc(u.nombre)}')">Eliminar</button>` : ""}
+                    <button class="btn sm" onclick="editarUsuarioModal('${u.id}')">Editar</button>
+                    ${yo ? "" : `<button class="btn sm ${u.activo?"rojo":"verde"}" onclick="toggleUser('${u.id}',${!u.activo})">${u.activo?"Bloquear":"Habilitar"}</button>
+                    <button class="btn sm pel" onclick="delUser('${u.id}')">Eliminar</button>`}
                   </div>
                 </td>
               </tr>`;
@@ -4545,221 +4613,256 @@ function viewUsuarios(){
   `;
 
   ojos($("workspace"));
-
-  $("f-new-user").onsubmit = async e => {
+  $("f-newuser").onsubmit = async e => {
     e.preventDefault();
     const fd = new FormData(e.target);
-    const usuario = fd.get("usuario").trim();
-    const nombre = fd.get("nombre").trim();
-    const { data, error } = await sb.rpc("admin_crear_usuario", {
-      p_usuario: usuario,
-      p_password: fd.get("password"),
-      p_nombre: nombre,
-      p_rol: fd.get("rol")
-    });
-    if (error) return toast("Error: " + error.message, true);
-    log("Creó usuario", "perfiles", `${usuario} (${fd.get("rol")})`);
-    e.target.reset(); await syncAllData(); renderSaas(); toast(`Usuario ${usuario} creado correctamente.`);
+    const u = fd.get("u").trim().toLowerCase(), n = fd.get("n").trim(), r = fd.get("r"), p = fd.get("p");
+    const { data, error } = await sb.rpc("admin_crear_usuario", {p_usuario: u, p_clave: p, p_nombre: n, p_rol: r});
+    if (error) return toast(error.message, true);
+    log("Creó usuario", "perfiles", `${u} (${r})`);
+    e.target.reset(); toast("Usuario creado correctamente."); viewUsuarios();
   };
 }
 
-let editUserId = null;
-function openEditUserModal(id){
+let editandoUserId = null;
+function editarUsuarioModal(id){
   const u = state.perfiles.find(x => x.id === id);
   if (!u) return;
-  editUserId = id;
-  euUserPhotoUrl = getUserFoto(u);
+  editandoUserId = u.id;
   $("e-u").value = u.usuario || "";
-  $("e-n").value = u.nombre || "";
-  $("e-p").value = "";
-  $("e-r").innerHTML = `<option value="veterinario">Veterinario</option><option value="administrador">Administrador</option>`;
+  $("e-n").value = u.nombre;
+  $("e-r").innerHTML = `<option value="${ROL_VET}">Veterinario</option><option value="${ROL_ADMIN}">Administrador</option>`;
   $("e-r").value = u.rol;
-  $("e-r").disabled = id === perfil.id;
-  refreshEditUserAvatar();
-  ojos($("dlg-editar"));
+  $("e-r").disabled = u.id === perfil.id;
+  $("e-p").value = "";
+  const url = getUserFoto(u);
+  $("eu-ava-prev").innerHTML = userAvatarHTML(u);
+  $("eu-foto-del").hidden = !url;
   $("dlg-editar").showModal();
   icons();
 }
 $("e-x").onclick = () => $("dlg-editar").close();
+$("eu-foto-file").onchange = async e => {
+  const f = e.target.files[0];
+  if (!f || !editandoUserId) return;
+  try {
+    const url = await uploadBrandingOrAvatar(f, "perfiles", 400, false);
+    await saveUserPhoto(editandoUserId, url);
+    const u = state.perfiles.find(x => x.id === editandoUserId);
+    $("eu-ava-prev").innerHTML = userAvatarHTML(u);
+    $("eu-foto-del").hidden = false;
+    log("Actualizó foto de usuario", "perfiles", u?.usuario);
+    toast("Foto de perfil actualizada.");
+    if (state.route === "usuarios") viewUsuarios();
+    else renderSaas();
+  } catch { toast("No se pudo subir la imagen.", true); }
+  e.target.value = "";
+};
+$("eu-foto-del").onclick = async () => {
+  if (!editandoUserId || !confirm("¿Eliminar la foto de perfil de este usuario?")) return;
+  await saveUserPhoto(editandoUserId, "");
+  const u = state.perfiles.find(x => x.id === editandoUserId);
+  $("eu-ava-prev").innerHTML = userAvatarHTML(u);
+  $("eu-foto-del").hidden = true;
+  toast("Foto eliminada.");
+  if (state.route === "usuarios") viewUsuarios();
+  else renderSaas();
+};
 $("fe").onsubmit = async e => {
   e.preventDefault();
-  const payload = { p_id: editUserId, p_usuario: $("e-u").value.trim(), p_nombre: $("e-n").value.trim(), p_rol: $("e-r").value };
-  if ($("e-p").value) payload.p_password = $("e-p").value;
-  const { error } = await sb.rpc("admin_editar_usuario", payload);
+  const u = $("e-u").value.trim().toLowerCase(), n = $("e-n").value.trim(), r = $("e-r").value, p = $("e-p").value || null;
+  const { error } = await sb.rpc("admin_editar_usuario", {p_id: editandoUserId, p_usuario: u, p_nombre: n, p_rol: r, p_clave: p});
   if (error) return toast(error.message, true);
-  await saveUserPhoto(editUserId, euUserPhotoUrl);
+  log("Editó usuario", "perfiles", `${u} (${r})${p ? " + clave" : ""}`);
   $("dlg-editar").close();
-  log("Editó usuario", "perfiles", payload.p_usuario);
-  await syncAllData(); renderSaas(); toast("Usuario actualizado.");
+  if (editandoUserId === perfil.id) await cargarPerfil((await sb.auth.getUser()).data.user);
+  toast("Usuario actualizado."); viewUsuarios();
 };
-async function toggleUserActive(id, activo){
-  const { error } = await sb.from("perfiles").update({activo}).eq("id", id);
+async function toggleUser(id, active){
+  const { error } = await sb.rpc("admin_cambiar_activo", {p_id: id, p_activo: active});
   if (error) return toast(error.message, true);
-  log(activo ? "Activó usuario" : "Bloqueó usuario", "perfiles", id);
-  await syncAllData(); renderSaas();
+  log(active ? "Habilitó usuario" : "Bloqueó usuario", "perfiles", id);
+  toast(active ? "Acceso habilitado." : "Acceso bloqueado."); viewUsuarios();
 }
-async function deleteUser(id, nombre){
-  if (!confirm(`¿Eliminar definitivamente a ${nombre}?`)) return;
+async function delUser(id){
+  if (!confirm("¿Eliminar este usuario?")) return;
   const { error } = await sb.rpc("admin_eliminar_usuario", {p_id: id});
   if (error) return toast(error.message, true);
   setLocalUserAvatar(id, "");
-  log("Eliminó usuario", "perfiles", nombre);
-  await syncAllData(); renderSaas(); toast("Usuario eliminado.");
+  log("Eliminó usuario", "perfiles", id);
+  toast("Usuario eliminado."); viewUsuarios();
 }
 
-/* ============ 15. CONFIGURACIÓN DE LA CLÍNICA ============ */
+/* ============ 15. CONFIGURACIÓN ============ */
 function viewConfiguracion(){
-  if (!isAdmin()) return viewDashboard();
+  if (!isAdmin()){ viewDashboard(); return; }
   const c = state.config;
   const logoUrl = getBrandLogoUrl();
   const favUrl = getPageIconUrl();
   const curBg = getCustomBg();
-  const curLoginBg = getLoginBg();
+  const loginBg = getLoginBg();
+
+  const presetBgs = [
+    ["#f3f6fa", "Gris Clínico (Predeterminado)"],
+    ["#eef6f5", "Menta Suave"],
+    ["#eff6ff", "Azul Cielo"],
+    ["#faf5ff", "Lavanda Tenue"],
+    ["#fefce8", "Crema Cálido"],
+    ["linear-gradient(135deg,#f0fdfa 0%,#e0f2fe 100%)", "Degradado Aqua"]
+  ];
+
+  const presetLoginBgs = [
+    ["", "Veterinaria Clásica (Predeterminada)"],
+    ["https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1920&q=80", "Perros en Parque"],
+    ["https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1920&q=80", "Felino Clínico"],
+    ["https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1920&q=80", "Cuidado Animal"]
+  ];
 
   $("workspace").innerHTML = `
     <div class="page-head">
-      <div><h1 class="page-title">Configuración de la Clínica</h1><p class="page-sub">Identidad visual, logo, icono de página, fondo, datos fiscales y parámetros operativos</p></div>
+      <div><h1 class="page-title">Configuración del Sistema</h1><p class="page-sub">Identidad visual, logo, fondo de inicio de sesión, parámetros fiscales y lector NFC</p></div>
     </div>
 
     <div class="card" style="margin-bottom:18px">
-      <div class="card-head"><span class="card-title">Identidad Visual, Logo, Icono de Pestaña y Fondos</span></div>
+      <div class="card-head">
+        <span class="card-title"><i data-lucide="palette" style="width:18px;height:18px;vertical-align:-3px;margin-right:6px"></i>Identidad Visual y Apariencia</span>
+      </div>
       <div class="card-body">
-        <div class="grid-2">
-          <!-- Logo de VEXAVET -->
-          <div style="display:flex;align-items:center;gap:14px;padding:12px;border:1px solid var(--saas-border);border-radius:10px;background:#f8fafc">
-            <div style="width:58px;height:58px;border-radius:12px;background:#fff;border:1px solid #cbd5e1;display:grid;place-items:center;overflow:hidden;flex-shrink:0">
-              ${logoUrl ? `<img src="${esc(logoUrl)}" alt="Logo" style="width:100%;height:100%;object-fit:contain">` : `<span style="width:58px;height:58px;background:linear-gradient(135deg,#0d9488,#2563eb);display:grid;place-items:center">${vexavetSvgHTML(40)}</span>`}
-            </div>
-            <div style="display:grid;gap:6px">
-              <strong style="font-size:.9rem">Logo Principal de la Clínica</strong>
-              <span style="font-size:.76rem;color:#64748b">Se muestra en la portada, login, menú lateral, barra superior y recetas/facturas.</span>
-              <input type="file" id="cfg-logo-file" accept="image/png,image/jpeg,image/webp,image/svg+xml" hidden>
-              <div class="fila">
-                <button type="button" class="btn sm pri" onclick="$('cfg-logo-file').click()"><i data-lucide="upload"></i> Cambiar logo</button>
-                ${logoUrl ? `<button type="button" class="btn sm pel" id="cfg-logo-reset">Restaurar</button>` : ""}
+        <div class="grid-3">
+          <div style="border:1px solid var(--saas-border);border-radius:10px;padding:14px;background:#f8fafc;display:grid;gap:10px">
+            <strong>Logo de la Clínica</strong>
+            <div style="display:flex;align-items:center;gap:12px">
+              <div style="width:58px;height:58px;border-radius:12px;background:#0f172a;display:grid;place-items:center;overflow:hidden;flex-shrink:0">
+                ${logoUrl ? `<img src="${esc(logoUrl)}" style="width:100%;height:100%;object-fit:contain;background:#fff;padding:4px">` : vexavetSvgHTML(40)}
+              </div>
+              <div style="display:grid;gap:6px">
+                <input type="file" id="cfg-logo-file" accept="image/png,image/jpeg,image/webp,image/svg+xml" hidden>
+                <button type="button" class="btn sm pri" onclick="$('cfg-logo-file').click()"><i data-lucide="upload"></i> Subir Logo</button>
+                ${logoUrl ? `<button type="button" class="btn sm pel" id="cfg-logo-reset">Restaurar logo original</button>` : `<span style="font-size:.75rem;color:#64748b">PNG transparente o JPG</span>`}
               </div>
             </div>
           </div>
 
-          <!-- Icono de la página (Favicon) -->
-          <div style="display:flex;align-items:center;gap:14px;padding:12px;border:1px solid var(--saas-border);border-radius:10px;background:#f8fafc">
-            <div style="width:58px;height:58px;border-radius:12px;background:#fff;border:1px solid #cbd5e1;display:grid;place-items:center;overflow:hidden;flex-shrink:0">
-              <img src="${esc(favUrl || DEFAULT_FAVICON)}" alt="Icono página" style="width:36px;height:36px;object-fit:contain">
-            </div>
-            <div style="display:grid;gap:6px">
-              <strong style="font-size:.9rem">Icono de la Página (Pestaña del navegador)</strong>
-              <span style="font-size:.76rem;color:#64748b">Favicon cuadrado recomendado (PNG, ICO o SVG).</span>
-              <input type="file" id="cfg-fav-file" accept="image/png,image/jpeg,image/webp,image/x-icon,image/svg+xml" hidden>
-              <div class="fila">
-                <button type="button" class="btn sm sec" onclick="$('cfg-fav-file').click()"><i data-lucide="sparkles"></i> Cambiar icono</button>
-                ${favUrl ? `<button type="button" class="btn sm pel" id="cfg-fav-reset">Restaurar</button>` : ""}
+          <div style="border:1px solid var(--saas-border);border-radius:10px;padding:14px;background:#f8fafc;display:grid;gap:10px">
+            <strong>Icono de Pestaña (Favicon)</strong>
+            <div style="display:flex;align-items:center;gap:12px">
+              <div style="width:58px;height:58px;border-radius:12px;background:#fff;border:1px solid #cbd5e1;display:grid;place-items:center;overflow:hidden;flex-shrink:0">
+                <img src="${esc(favUrl || DEFAULT_FAVICON)}" style="width:36px;height:36px;object-fit:contain">
+              </div>
+              <div style="display:grid;gap:6px">
+                <input type="file" id="cfg-fav-file" accept="image/png,image/jpeg,image/webp,image/x-icon" hidden>
+                <button type="button" class="btn sm pri" onclick="$('cfg-fav-file').click()"><i data-lucide="sparkles"></i> Cambiar Icono</button>
+                ${favUrl ? `<button type="button" class="btn sm pel" id="cfg-fav-reset">Restaurar icono</button>` : `<span style="font-size:.75rem;color:#64748b">Se muestra en la pestaña del navegador</span>`}
               </div>
             </div>
           </div>
 
-          <!-- Fondo del Panel Interno -->
-          <div style="padding:12px;border:1px solid var(--saas-border);border-radius:10px;background:#f8fafc">
-            <strong style="font-size:.9rem">Fondo del Panel Clínico Interno</strong>
-            <div style="font-size:.76rem;color:#64748b;margin:2px 0 8px">Elige un color/degradado suave o sube una imagen de fondo para el área de trabajo.</div>
-            <div class="fila" style="margin-bottom:8px">
-              ${["#f3f6fa","#eef2ff","#f0fdf4","#fefce8","#f8fafc","linear-gradient(135deg,#e0f2fe 0%,#f0fdf4 100%)","linear-gradient(135deg,#f1f5f9 0%,#e2e8f0 100%)"].map(bg => `
-                <button type="button" class="bg-swatch" data-bg-preset="${esc(bg)}" style="background:${bg}" title="Aplicar fondo"></button>
-              `).join("")}
-            </div>
-            <input type="file" id="cfg-bg-file" accept="image/jpeg,image/png,image/webp" hidden>
+          <div style="border:1px solid var(--saas-border);border-radius:10px;padding:14px;background:#f8fafc;display:grid;gap:10px">
+            <strong>Fondo del Panel Clínico</strong>
             <div class="fila">
-              <button type="button" class="btn sm" onclick="$('cfg-bg-file').click()"><i data-lucide="image"></i> Subir imagen de fondo</button>
-              ${curBg ? `<button type="button" class="btn sm pel" id="cfg-bg-reset">Fondo por defecto</button>` : ""}
+              ${presetBgs.map(([val, title]) => `<button type="button" class="bg-swatch" title="${title}" style="background:${val}" data-bg-preset="${esc(val)}"></button>`).join("")}
+            </div>
+            <div class="fila">
+              <input type="file" id="cfg-bg-file" accept="image/jpeg,image/png,image/webp" hidden>
+              <button type="button" class="btn sm" onclick="$('cfg-bg-file').click()"><i data-lucide="image"></i> Imagen de fondo</button>
+              ${curBg ? `<button type="button" class="btn sm pel" id="cfg-bg-reset">Quitar fondo</button>` : ""}
             </div>
           </div>
+        </div>
 
-          <!-- Fondo de Pantalla de Bienvenida / Login -->
-          <div style="padding:12px;border:1px solid var(--saas-border);border-radius:10px;background:#f8fafc">
-            <strong style="font-size:.9rem">Fondo de Portada / Inicio de Sesión</strong>
-            <div style="font-size:.76rem;color:#64748b;margin:2px 0 8px">Personaliza la imagen difuminada de fondo de la pantalla de bienvenida.</div>
-            <input type="file" id="cfg-login-bg-file" accept="image/jpeg,image/png,image/webp" hidden>
-            <div class="fila" style="margin-top:14px">
-              <button type="button" class="btn sm" onclick="$('cfg-login-bg-file').click()"><i data-lucide="image"></i> Cambiar fondo de portada</button>
-              ${curLoginBg ? `<button type="button" class="btn sm pel" id="cfg-login-bg-reset">Restaurar imagen original</button>` : ""}
+        <div style="margin-top:16px;border:1px solid var(--saas-border);border-radius:10px;padding:14px;background:#f8fafc;display:grid;gap:10px">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+            <div>
+              <strong>Fondo de Pantalla de Inicio de Sesión (Portada)</strong>
+              <div style="font-size:.78rem;color:#64748b">Personaliza la imagen de fondo que aparece antes de iniciar sesión en VEXAVET.</div>
             </div>
+            <div class="fila">
+              <input type="file" id="cfg-loginbg-file" accept="image/jpeg,image/png,image/webp" hidden>
+              <button type="button" class="btn sm pri" onclick="$('cfg-loginbg-file').click()"><i data-lucide="image"></i> Subir imagen de portada</button>
+              ${loginBg ? `<button type="button" class="btn sm pel" id="cfg-loginbg-reset">Restaurar portada</button>` : ""}
+            </div>
+          </div>
+          <div class="fila">
+            ${presetLoginBgs.map(([url, lbl]) => `
+              <button type="button" class="btn sm ${loginBg===url?"pri":""}" data-loginbg-preset="${esc(url)}">${esc(lbl)}</button>
+            `).join("")}
           </div>
         </div>
       </div>
     </div>
 
     <div class="card">
-      <div class="card-head"><span class="card-title">Datos Generales y Fiscales</span></div>
+      <div class="card-head">
+        <span class="card-title">Datos Institucionales y Fiscales</span>
+        <button type="button" class="btn sm" onclick="openNfcSetupModal()"><i data-lucide="nfc"></i> Configurar Lector NFC</button>
+      </div>
       <div class="card-body">
         <form id="f-cfg" class="form-grid">
           <div><label>Nombre de la Clínica *</label><input name="nombre_clinica" value="${esc(c.nombre_clinica)}" required></div>
-          <div><label>RUC / NIT / Identificación Fiscal</label><input name="nit_ruc" value="${esc(c.nit_ruc || "")}"></div>
+          <div><label>NIT / RUC / Identificación Fiscal</label><input name="nit_ruc" value="${esc(c.nit_ruc || "")}"></div>
           <div><label>País</label><input name="pais" value="${esc(c.pais || "Ecuador")}"></div>
-          <div><label>Ciudad</label><input name="ciudad" value="${esc(c.ciudad || "")}"></div>
           <div><label>Símbolo de Moneda</label><input name="moneda" value="${esc(c.moneda || "$")}"></div>
-          <div><label>Nombre del Impuesto (IVA / IGV)</label><input name="impuesto_nombre" value="${esc(c.impuesto_nombre || "IVA")}"></div>
+          <div><label>Nombre del Impuesto</label><input name="impuesto_nombre" value="${esc(c.impuesto_nombre || "IVA")}"></div>
           <div><label>Porcentaje de Impuesto (%)</label><input type="number" step="0.01" name="impuesto_porcentaje" value="${c.impuesto_porcentaje ?? 15}"></div>
           <div><label>Teléfono Principal</label><input name="telefono" value="${esc(c.telefono || "")}"></div>
-          <div><label>Correo Corporativo</label><input type="email" name="email" value="${esc(c.email || "")}"></div>
+          <div><label>Correo Institucional</label><input type="email" name="email" value="${esc(c.email || "")}"></div>
+          <div><label>Ciudad</label><input name="ciudad" value="${esc(c.ciudad || "")}"></div>
+          <div><label>Dirección</label><input name="direccion" value="${esc(c.direccion || "")}"></div>
           <div><label>Horario de Atención</label><input name="horario" value="${esc(c.horario || "")}"></div>
-          <div class="full"><label>Dirección Física</label><input name="direccion" value="${esc(c.direccion || "")}"></div>
-          <div><label>Sucursales / Sedes</label><input name="sedes" value="${esc(c.sedes || "")}"></div>
-          <div><label>Métodos de Pago Aceptados (separados por coma)</label><input name="metodos_pago" value="${esc(c.metodos_pago || "")}"></div>
+          <div><label>Sedes / Sucursales</label><input name="sedes" value="${esc(c.sedes || "")}"></div>
+          <div class="full"><label>Métodos de Pago Aceptados (separados por coma)</label><input name="metodos_pago" value="${esc(c.metodos_pago || "Efectivo, Tarjeta, Transferencia")}"></div>
           <div class="full"><button class="btn pri">Guardar Configuración</button></div>
         </form>
       </div>
     </div>
   `;
 
-  const saveAppearanceSetting = async (key, localKey, value, msg) => {
-    state.config[key] = value || "";
+  async function saveVisualKey(key, localKey, value, msg){
     if (value) localStorage.setItem(localKey, value);
     else localStorage.removeItem(localKey);
+    state.config[key] = value || "";
     localStorage.setItem("vx_config_cache", JSON.stringify(state.config));
     applyCustomAppearance();
-    try { await db.update("configuracion_clinica", 1, { [key]: value || null }); } catch {}
-    log("Actualizó apariencia", "configuracion_clinica", key);
+    try {
+      await db.update("configuracion_clinica", 1, { [key]: value || null });
+    } catch {}
     toast(msg);
     renderSaas();
-  };
+  }
 
   $("cfg-logo-file").onchange = async e => {
     const f = e.target.files[0]; if (!f) return;
-    try {
-      const url = await uploadBrandingOrAvatar(f, "branding", 400, true);
-      await saveAppearanceSetting("logo_url", "vx_logo_url", url, "Logo de la clínica actualizado.");
-    } catch { toast("No se pudo subir el logo.", true); }
+    const url = await uploadBrandingOrAvatar(f, "branding", 320, true);
+    await saveVisualKey("logo_url", "vx_logo_url", url, "Logo de la clínica actualizado.");
   };
-  if ($("cfg-logo-reset")) $("cfg-logo-reset").onclick = () => saveAppearanceSetting("logo_url", "vx_logo_url", "", "Logo restaurado al original.");
+  if ($("cfg-logo-reset")) $("cfg-logo-reset").onclick = () => saveVisualKey("logo_url", "vx_logo_url", "", "Logo original restaurado.");
 
   $("cfg-fav-file").onchange = async e => {
     const f = e.target.files[0]; if (!f) return;
-    try {
-      const url = await uploadBrandingOrAvatar(f, "branding", 128, true);
-      await saveAppearanceSetting("favicon_url", "vx_favicon_url", url, "Icono de página actualizado.");
-    } catch { toast("No se pudo subir el icono.", true); }
+    const url = await uploadBrandingOrAvatar(f, "branding", 128, true);
+    await saveVisualKey("favicon_url", "vx_favicon_url", url, "Icono de pestaña actualizado.");
   };
-  if ($("cfg-fav-reset")) $("cfg-fav-reset").onclick = () => saveAppearanceSetting("favicon_url", "vx_favicon_url", "", "Icono de página restaurado.");
+  if ($("cfg-fav-reset")) $("cfg-fav-reset").onclick = () => saveVisualKey("favicon_url", "vx_favicon_url", "", "Icono de pestaña restaurado.");
 
   document.querySelectorAll("[data-bg-preset]").forEach(btn => {
-    btn.onclick = () => saveAppearanceSetting("custom_bg", "vx_custom_bg", btn.dataset.bgPreset, "Fondo actualizado.");
+    btn.onclick = () => saveVisualKey("custom_bg", "vx_custom_bg", btn.dataset.bgPreset, "Fondo de pantalla aplicado.");
   });
   $("cfg-bg-file").onchange = async e => {
     const f = e.target.files[0]; if (!f) return;
-    try {
-      const url = await uploadBrandingOrAvatar(f, "branding", 1600, false);
-      await saveAppearanceSetting("custom_bg", "vx_custom_bg", url, "Imagen de fondo aplicada.");
-    } catch { toast("No se pudo procesar la imagen de fondo.", true); }
+    const url = await uploadBrandingOrAvatar(f, "branding", 1400, false);
+    await saveVisualKey("custom_bg", "vx_custom_bg", url, "Imagen de fondo aplicada.");
   };
-  if ($("cfg-bg-reset")) $("cfg-bg-reset").onclick = () => saveAppearanceSetting("custom_bg", "vx_custom_bg", "", "Fondo restaurado.");
+  if ($("cfg-bg-reset")) $("cfg-bg-reset").onclick = () => saveVisualKey("custom_bg", "vx_custom_bg", "", "Fondo predeterminado restaurado.");
 
-  $("cfg-login-bg-file").onchange = async e => {
+  document.querySelectorAll("[data-loginbg-preset]").forEach(btn => {
+    btn.onclick = () => saveVisualKey("login_bg", "vx_login_bg", btn.dataset.loginbgPreset, "Fondo de inicio de sesión actualizado.");
+  });
+  $("cfg-loginbg-file").onchange = async e => {
     const f = e.target.files[0]; if (!f) return;
-    try {
-      const url = await uploadBrandingOrAvatar(f, "branding", 1600, false);
-      await saveAppearanceSetting("login_bg", "vx_login_bg", url, "Fondo de portada actualizado.");
-    } catch { toast("No se pudo procesar la imagen.", true); }
+    const url = await uploadBrandingOrAvatar(f, "branding", 1600, false);
+    await saveVisualKey("login_bg", "vx_login_bg", url, "Imagen de fondo de portada aplicada.");
   };
-  if ($("cfg-login-bg-reset")) $("cfg-login-bg-reset").onclick = () => saveAppearanceSetting("login_bg", "vx_login_bg", "", "Fondo de portada restaurado.");
+  if ($("cfg-loginbg-reset")) $("cfg-loginbg-reset").onclick = () => saveVisualKey("login_bg", "vx_login_bg", "", "Fondo de portada predeterminado restaurado.");
 
   $("f-cfg").onsubmit = async e => {
     e.preventDefault();
@@ -4768,53 +4871,50 @@ function viewConfiguracion(){
       nombre_clinica: fd.get("nombre_clinica").trim(),
       nit_ruc: fd.get("nit_ruc").trim(),
       pais: fd.get("pais").trim(),
-      ciudad: fd.get("ciudad").trim(),
       moneda: fd.get("moneda").trim() || "$",
       impuesto_nombre: fd.get("impuesto_nombre").trim() || "IVA",
       impuesto_porcentaje: Number(fd.get("impuesto_porcentaje") || 0),
       telefono: fd.get("telefono").trim(),
       email: fd.get("email").trim(),
-      horario: fd.get("horario").trim(),
+      ciudad: fd.get("ciudad").trim(),
       direccion: fd.get("direccion").trim(),
+      horario: fd.get("horario").trim(),
       sedes: fd.get("sedes").trim(),
-      metodos_pago: fd.get("metodos_pago").trim()
+      metodos_pago: fd.get("metodos_pago").trim(),
+      actualizado_en: new Date().toISOString()
     };
     state.config = { ...state.config, ...payload };
     localStorage.setItem("vx_config_cache", JSON.stringify(state.config));
-    try {
-      const existing = await db.list("configuracion_clinica", "id", true);
-      if (existing && existing.length) await db.update("configuracion_clinica", existing[0].id, payload);
-      else await db.insert("configuracion_clinica", { id: 1, ...payload });
-    } catch {}
-    log("Actualizó configuración", "configuracion_clinica", payload.nombre_clinica);
+    await db.update("configuracion_clinica", 1, payload);
+    log("Actualizó configuración del sistema", "configuracion_clinica");
     renderSaas(); toast("Configuración guardada.");
   };
   icons();
 }
 
-/* ============ 16. AUDITORÍA / REGISTRO DE ACTIVIDAD ============ */
+/* ============ 16. AUDITORÍA ============ */
 function viewAuditoria(){
-  if (!isAdmin()) return viewDashboard();
+  if (!isAdmin()){ viewDashboard(); return; }
   $("workspace").innerHTML = `
     <div class="page-head">
-      <div><h1 class="page-title">Registro de Actividad y Auditoría</h1><p class="page-sub">Trazabilidad completa de acciones realizadas por el personal en el sistema</p></div>
+      <div><h1 class="page-title">Registro de Actividad y Auditoría</h1><p class="page-sub">Bitácora de trazabilidad de acciones clínicas y administrativas</p></div>
     </div>
     <div class="card"><div class="tbl-wrap"><table class="saas-tbl">
-      <thead><tr><th>Fecha y Hora</th><th>Usuario</th><th>Acción</th><th>Módulo / Entidad</th><th>Detalle</th></tr></thead>
+      <thead><tr><th>Fecha y Hora</th><th>Usuario</th><th>Acción</th><th>Módulo</th><th>Detalle</th></tr></thead>
       <tbody>
         ${state.actividad.map(a => `<tr>
           <td>${fechaHora(a.creado_en)}</td>
           <td><strong>${esc(a.usuario_email || "—")}</strong></td>
           <td>${esc(a.accion)}</td>
-          <td><span class="badge b-gray">${esc(a.entidad || "—")}</span></td>
+          <td><span class="badge b-gray">${esc(a.entidad || "sistema")}</span></td>
           <td>${esc(a.detalle || "—")}</td>
-        </tr>`).join("") || `<tr><td colspan="5">Sin registros de auditoría aún.</td></tr>`}
+        </tr>`).join("") || `<tr><td colspan="5">Sin registros de auditoría.</td></tr>`}
       </tbody>
     </table></div></div>
   `;
 }
 
-/* ============ ARRANCAR APLICACIÓN ============ */
+/* ============ ARRANQUE ============ */
 function render(){
   if (publicId && (!perfil || forzarPublico)) return pintarPublico();
   if (!perfil) return pintarPortada();
@@ -4825,16 +4925,11 @@ function render(){
   await loadPublicBranding();
   const { data: { session } } = await sb.auth.getSession();
   if (session){
-    const r = await cargarPerfil(session.user);
-    if (r) toast(r === "bloqueado" ? "Tu acceso está bloqueado." : "Cuenta sin perfil.", true);
-    else await syncAllData();
+    await cargarPerfil(session.user);
+    if (perfil) await syncAllData();
   }
   render();
   startNfcBridge();
-  sb.auth.onAuthStateChange((ev, s) => {
-    if (ev === "SIGNED_OUT" && perfil){ perfil = null; render(); }
-    if (ev === "SIGNED_IN" && s && !perfil) cargarPerfil(s.user).then(async () => { if (perfil) await syncAllData(); render(); });
-  });
 })();
 </script>
 </body>
